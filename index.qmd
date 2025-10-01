@@ -1,5 +1,20 @@
 ---
-title: "jaslynmiura.github.io"
+title: "Jaslyn Miura"
+image: jaslyn_miura.jpg
+about:
+  template: jolla
+  image-shape: rounded
+  image-width: 17em
+  links: 
+    - text: LinkedIn
+      href: https://www.linkedin.com/in/jaslyn-miura/
+      target: _blank
+    - text: GitHub
+      href: https://github.com/jaslynmiura
+      target: _blank
+    - text: Email
+      href: mailto:jaslyntmiura@ucsb.edu
 ---
 
-Hi this is Gigi!
+Growing up in Hawaiʻi, Jaslyn was surrounded by a community and unique ecosystems that shaped her love for the environment. Learning about Hawaiian culture that is deeply intertwined with the land while also witnessing the effects of climate change on her home, inspired Jaslyn to work in the environmental science field. Jaslyn intends to return to Hawaiʻi to work alongside her community to apply traditional ecological knowledge and data science to advance sustainable development and conservation. 
+
