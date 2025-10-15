@@ -1,0 +1,55 @@
+/*-- scss:defaults --*/
+
+// import google fonts
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+// fonts
+$raleway: "Raleway", sans-serif;
+$bodoni: "Bodoni Moda", serif;
+
+// colors
+$darkbrown: #33261D; 
+$lightblue: #BFD5E2; 
+$navyblue: #13293D; 
+$lavender: #816E94; 
+$green: #5F8460; 
+$eggshell: #F3F0E3; 
+
+
+// define quarto variables
+$body-bg: $eggshell;
+$navbar-bg: $green;
+$navbar-fg: $navyblue;
+$footer-bg: $green;
+$navbar-hl: $lightblue;
+$link-color: $lightblue;
+$body-color: $darkbrown;
+
+/*-- scss:rules --*/
+
+
+h1, h2 {
+  font-family: $raleway;
+}
+
+.navbar-brand img { 
+  max-height: 40px;
+  width: auto;
+}
+
+h1, h2 {
+  letter-spacing: 5px;
+  font-weight: 500;
+}
+
+.title {
+  color: $navyblue;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.lavender-text {
+  color: $lavender;
+}
