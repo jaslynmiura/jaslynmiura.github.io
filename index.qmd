@@ -2,8 +2,8 @@
 title: "Jaslyn Miura"
 image: jaslyn_miura.jpg
 about:
-  template: jolla
-  image-shape: rounded
+  template: solana
+  image-shape: round
   image-width: 17em
   links: 
     - text: LinkedIn
