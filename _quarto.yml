@@ -4,22 +4,32 @@ project:
 
 website:
   title: "Jaslyn Miura"
+  favicon: images/favicon.png
   navbar:
+    title: false
+    logo: images/favicon.png
+    logo-alt: a circle with three horizontal dashes through it
     right:
       - href: index.qmd
         text: Home
-      # - about.qmd
-      # - href: resources.qmd
-      #   text: Resources
+      - about.qmd
+      - posts.qmd
+      - href: resources.qmd
+        text: Resources
+      - icon: github
+        href: https://github.com/jaslynmiura/jaslynmiura.github.io
+  page-footer: 
+    left: Copyright 2025, Jaslyn Miura
+    right: 
+      - icon: github
+        href: https://github.com/jaslynmiura/jaslynmiura.github.io
 
 format:
   html:
-    theme:
-      - journal
-      - brand
-    css: styles.css
+    theme: styles.scss
     toc: true
     page-layout: full
+    mainfont: Raleway
 
 editor: visual
 

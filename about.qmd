@@ -2,8 +2,26 @@
 title: "About"
 ---
 
-About this site
+## What I do for work
 
-```{r}
-1 + 1
-```
+### Education
+
+---
+
+**University of Washington** | Seattle, WA
+
+B.S. Environmental Science and Terrestrial Resource Management with a minor in Quantitative Science | September 2021 - June 2025
+
+**University of California, Santa Barbara** | Santa Barbara, CA
+
+Master's of Environmental Data Science | August 2025 - June 2026 (expected)
+
+### What I've Done
+
+---
+
+Give the people what they want! SOmething fun!
+
+### Professional Interests
+
+
