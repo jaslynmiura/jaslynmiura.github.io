@@ -1,6 +1,11 @@
 [
   {
     "listing": "/posts.html",
-    "items": []
+    "items": [
+      "/posts/eds222-blog-post/index.html",
+      "/posts/eds223-blog-post/index.html",
+      "/posts/eds220-blog-post/index.html",
+      "/posts/eds242-blog-post/index.html"
+    ]
   }
 ]
