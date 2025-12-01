@@ -8,3 +8,6 @@
 /.quarto/
 
 **/*.quarto_ipynb
+
+# Ignore the data in the EDS 223 folder
+posts/eds223-blog-post/data
