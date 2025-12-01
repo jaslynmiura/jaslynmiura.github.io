@@ -3,6 +3,11 @@ title: "EDS 223 Blog Post"
 description: "Spatial analysis of suitable areas for marine aquaculture"
 date: 2025-11-27
 categories: [MEDS, R]
+output:
+  distill::distill_article:
+    toc: true
+    code_folding: true
+    self_contained: false
 # image: 'filepath of the image in the first-blog-post file, put image in the first-blog-post/'
 # citation:
 #   url: https://jaslynmiura.github.io/posts/my-first-blog-post/
@@ -11,17 +16,187 @@ categories: [MEDS, R]
 # bibliography: references.bib
 ---
 
+```{r, include = FALSE}
+library(tidyverse)
+library(terra)
+library(sf)
+library(tmap)
+library(paletteer)
+library(maptiles) 
+library(testthat)
+library(kableExtra) 
+library(knitr)
+```
+
 # Determining Exclusive Economic Zones for Marine Aquaculture Species 
 
 Marine aquaculture can play a vital role in the global food supply. Using the ideal depth range and temperature range of different species, we can identify areas within the designated Exclusive Economic Zones along the west coast that would be suitable for marine aquaculture.
 
+## Data Cleaning
 
-### Spatial Analysis
+```{r, output = FALSE}
+# Load in Sea Surface Temperature raster.
+sst_08 <- rast(here::here('posts', 'eds223-blog-post', 'data', 'average_annual_sst_2008.tif'))
+sst_09 <- rast(here::here('posts', 'eds223-blog-post', 'data', 'average_annual_sst_2009.tif'))
+sst_10 <- rast(here::here('posts', 'eds223-blog-post', 'data', 'average_annual_sst_2010.tif'))
+sst_11 <- rast(here::here('posts', 'eds223-blog-post', 'data', 'average_annual_sst_2011.tif'))
+sst_12 <- rast(here::here('posts', 'eds223-blog-post', 'data', 'average_annual_sst_2012.tif'))
+```
+
+```{r, output = FALSE}
+# Stacking the 2008, 2009, 2010, 2011, and 2012 rasters.
+sst <- c(sst_08, sst_09, sst_10, sst_11, sst_12)
+```
+
+```{r}
+# Find the average SST of the stacked layers.
+avg_sst_rast <- mean(sst)
+```
+
+```{r}
+# Convert the average SST from Kelvin to Celsius, by subtracting 273.15
+avg_sst_rast <- avg_sst_rast - 273.15
+```
+
+```{r}
+# Loading the depth raster.
+depth <- rast(here::here('posts', 'eds223-blog-post', 'data', 'depth.tif'))
+```
+
+```{r}
+# Check if coordinate reference systems match.
+if(crs(avg_sst_rast) == crs(depth)) {
+  print("Coordinate reference systems match")
+} else{
+  warning("Updating coordinate reference systems to match")
+  # transform data to match
+  depth <- project(depth, avg_sst_rast)
+}
+```
+
+```{r}
+# Cropping the depth raster to match the extent of the SST raster.
+depth_crop <- terra::crop(depth, avg_sst_rast)
+```
+
+```{r}
+# Resampling the depth raster, using the nearest neighbor approach
+depth_resample <- resample(depth_crop, y = avg_sst_rast, method = "near")
+```
+
+```{r}
+# Check that the depth_resample and avg_sst_rast match in resolution, extent, and crs.
+if(crs(avg_sst_rast) == crs(depth_resample)) {
+  print("Coordinate reference systems match!")
+} else{
+  warning("Updating coordinate reference systems to match")
+  # Transform data to match
+  avg_sst_rast <- project(avg_sst_rast, depth_resample)
+}
+
+if(resolution(avg_sst_rast) == resolution(depth_resample)) {
+  print("Resolutions match!")
+} else{
+  print("Resolutions do not match!")
+}
+
+if(ext(avg_sst_rast) == ext(depth_resample)) {
+  print("Extents match!")
+} else{
+  print("Extents do not match!")
+}
+```
+
+## Spatial Analysis
 
 Using raster data we can... what is rasters?
 
+```{r}
+# Reclassify avg_sst_rast into locations that are suitable for oysters.
+rcl_temp <- matrix(c(-Inf, 11, 0,
+                11, 30, 1,
+                30, Inf, 0),
+              ncol = 3, byrow = TRUE)
 
-```r
+reclassified_sst <- classify(avg_sst_rast, rcl = rcl_temp)
+
+reclassified_sst[is.na(reclassified_sst)] <- 0
+```
+
+```{r}
+# Reclassify depth into locations that are suitable for oysters.
+rcl_depth <- matrix(c(-Inf, -70, 0,
+                -70, 0, 1,
+                0, Inf, 0),
+              ncol = 3, byrow = TRUE)
+
+reclassified_depth <- classify(depth_resample, rcl = rcl_depth)
+
+reclassified_depth[is.na(reclassified_depth)] <- 0
+```
+
+```{r}
+# Multiply depth and temperature rasters to find suitable areas for both conditions.
+suitable_eez <- (reclassified_depth)*(reclassified_sst)
+```
+
+```{r, output = FALSE}
+# Loading boundaries using west coast Exclusive Economic Zones.
+west_coast <- st_read(here::here('posts', 'eds223-blog-post', 'data', 'wc_regions_clean.shp'))
+```
+
+```{r, output = FALSE}
+# Check if the coordinate systems match.
+if(crs(suitable_eez) == crs(west_coast)) {
+  print("Coordinate reference systems match")
+} else{
+  warning("Updating coordinate reference systems to match")
+  # transform data to match
+  west_coast <- st_transform(west_coast, crs = st_crs(suitable_eez))
+}
+```
+
+### Determine the most suitable EEZ.
+```{r}
+# Masking the suitable_eez raster to the west_coast regions.
+suitable_eez_mask <- mask(suitable_eez, west_coast)
+```
+
+```{r}
+# Vectoirize west_coast boundary.
+west_coast_vect <- vect(west_coast)
+
+# Select the number suitable cells within west coast EEZs.
+region_count <- terra::extract(suitable_eez_mask, west_coast_vect, 
+                               fun = "sum") %>% 
+  rename(suitable_cell_count = depth)
+
+# Use cellSize to change the units to kilometers.
+grid_cell_km <- cellSize(suitable_eez_mask, unit = "km")
+
+# Convert cells of mask raster into km^2.
+suitable_area_rast <- suitable_eez_mask * grid_cell_km
+
+# Calculate the area of suitable cells within west coast EEZ.
+region_area <- terra::extract(suitable_area_rast, west_coast_vect, 
+                              fun = sum, na.rm = TRUE) %>% 
+  rename(suitable_area_oysters = depth)
+
+# Creating bins for suitable area.
+region_area$suitable_area_bin_oysters <- cut(
+  region_area$suitable_area_oysters,
+  breaks = c(0, 1000, 2000, 3000, 4000),
+  include.lowest = TRUE,
+  right = FALSE,
+  labels = c("0–1000", "1000–2000", "2000–3000", "3000–4000"))
+
+# Joining the suitable region area to the west_coast boundary dataframe.
+west_coast <- west_coast %>%
+  left_join(region_area, by = c("rgn_id" = "ID")) 
+```
+
+
+```{r}
 # Creating a table of suitable area in each region.
 suitable_df <- west_coast %>% 
   select("rgn", "suitable_area_oysters") %>% 
@@ -32,9 +207,8 @@ suitable_df <- west_coast %>%
                 position = "center") 
 suitable_df
 ```
-INSERT THE TABLE
 
-```r
+```{r, message=FALSE}
 # Create a map of the suitable area within each Exclusive Economic Zone.
 tm_graticules() +
 tm_basemap("OpenStreetMap") +
@@ -46,3 +220,85 @@ tm_shape(west_coast) +
 ```
 
 This map compares the suitability of each region. Highlighting which regions have the highest area in km$^2$ that can support a given species, in this case we are looking at oysters. 
+
+```{r}
+# Create a function to find suitable area for any species.
+suitable_eez_fun <- function(min_temp, max_temp, min_depth, max_depth, species_name) {
+  
+  # Reclassify avg_sst_rast into locations that are suitable for selected species.
+  rcl_temp <- matrix(c(-Inf, min_temp, 0,
+                       min_temp, max_temp, 1,
+                       max_temp, Inf, 0),
+                     ncol = 3, byrow = TRUE)
+  
+  reclassified_sst <- classify(avg_sst_rast, rcl = rcl_temp)
+  
+  reclassified_sst[is.na(reclassified_sst)] <- 0
+  
+  # Reclassify depth raster into locations that are suitable for selected species.
+  rcl_depth <- matrix(c(-Inf, -(min_depth), 0,
+                        -(min_depth), max_depth, 1,
+                        max_depth, Inf, 0),
+                      ncol = 3, byrow = TRUE)
+  
+  reclassified_depth <- classify(depth_resample, rcl = rcl_depth)
+  
+  reclassified_depth[is.na(reclassified_depth)] <- 0
+  
+  # Multiply depth and temperature rasters to find suitable areas for both conditions.
+  suitable_eez <- (reclassified_depth)*(reclassified_sst)
+  
+  # Masking the suitable_eez raster to the west_coast regions.
+  suitable_eez_mask <- mask(suitable_eez, west_coast)
+  
+  # Select the number suitable cells within west coast EEZs.
+  region_count <- terra::extract(suitable_eez_mask, west_coast_vect, fun = "sum")
+  
+  # Use cellSize to change the units to kilometers.
+  grid_cell_km <- cellSize(suitable_eez_mask, unit = "km")
+  
+  # Convert cells of mask raster into km^2.
+  suitable_area_rast <- suitable_eez_mask * grid_cell_km
+  
+  # Calculate the area of suitable cells within west coast EEZ.
+  region_area_species <- terra::extract(suitable_area_rast, west_coast_vect, 
+                                        fun = sum, na.rm = TRUE) %>%
+    rename(suitable_area_select_species = depth)
+  
+  # Creating bins for suitable area.
+  region_area_species$suitable_area_bin_select_species <- cut(
+    region_area_species$suitable_area_select_species,
+    breaks = c(0, 1000, 2000, 3000, 4000),
+    include.lowest = TRUE,
+    right = FALSE,
+    labels = c("0–1000", "1000–2000", "2000–3000", "3000–4000"))
+  
+  # Joining the suitable region area to the west_coast boundary dataframe.
+  west_coast_species <- west_coast %>%
+    left_join(region_area_species, by = c("rgn_id" = "ID"))
+  
+  # Create a map of the suitable area within each Exclusive Economic Zone.
+   species_map <- tm_graticules() +
+     tm_basemap("OpenStreetMap") +
+     tm_shape(west_coast_species) +
+     tm_polygons(fill = "suitable_area_bin_select_species",
+                 fill.scale = tm_scale(values = "brewer.pu_rd"),
+                 fill.legend = tm_legend(expression("Area km"^{2}))) +
+     tm_title(text = paste("Suitable EEZ for", str_to_title(species_name))) +
+     tmap_options(component.autoscale = FALSE)
+
+  print(species_map)
+  
+}
+
+# Use the function to create a map for Red Abalone.
+suitable_eez_fun(min_temp = 8,
+                 max_temp = 18,
+                 min_depth = 24,
+                 max_depth = 0,
+                 species_name = "Red Abalone")
+
+```
+
+## Identifying other suitable regions for marine species
+To identify other suitable regions for other marine species, a function was created, where only parameters required are the depth and temperature ranges, and the species name we are interested in. This function will create a map of new species we are interested in. The map identifies the regions along the west coast that contains the largest suitable areas for the marine species.
