@@ -11,3 +11,6 @@
 
 # Ignore the data in the EDS 223 folder
 posts/eds223-blog-post/data
+
+# Ignore the data in the EDS 220 folder
+posts/eds220-blog-post/data
