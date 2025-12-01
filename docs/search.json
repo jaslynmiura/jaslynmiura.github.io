@@ -47,5 +47,12 @@
     "title": "EDS 220 Blog Post",
     "section": "",
     "text": "Eaton Fire Perimeter: Accessed from the County of Los Angeles Geohub. The dataframe contains geometries of the perimeter of the Eaton fire.\n\nData Source: Palisades and Eaton Dissolved Fire Perimeters (2025)\n\nPalisade Fire Perimeter: Accessed from the County of Los Angeles Geohub. The dataframe contains geometries of the perimeter of the Palisade fire.\n\nData Source: Palisades and Eaton Dissolved Fire Perimeters (2025)\n\nLandsat: Accessed from the Microsof Planetary Computer data catalogue and sourced from the Landsat Collection 2 Level-2 Science Products, specifically the atmospherically corrected surface reflectance image data.\n\nData Source: USGS EROS Archive - Landsat Archives - Landsat 8-9 OLI/TIRS Collection 2 Level-2 Science Products\nAdditional Information and Metadata: Landsat Collection 2 Surface Reflectance"
+  },
+  {
+    "objectID": "posts/eds223-blog-post/index.html",
+    "href": "posts/eds223-blog-post/index.html",
+    "title": "EDS 223 Blog Post",
+    "section": "",
+    "text": "Determining Exclusive Economic Zones for Marine Aquaculture Species\nMarine aquaculture can play a vital role in the global food supply. Using the ideal depth range and temperature range of different species, we can identify areas within the designated Exclusive Economic Zones along the west coast that would be suitable for marine aquaculture.\n\nSpatial Analysis\nUsing raster data we can… what is rasters?\n# Creating a table of suitable area in each region.\nsuitable_df &lt;- west_coast %&gt;% \n  select(\"rgn\", \"suitable_area_oysters\") %&gt;% \n  st_drop_geometry() %&gt;% \n  kable(col.names = c(\"Region\", \"Suitable Area (km^2)\"),\n        caption = \"Table 1: Suitable Area (km$^2$) for Oysters\") %&gt;% \n  kable_styling(bootstrap_options = \"hover\",\n                position = \"center\") \nsuitable_df\nINSERT THE TABLE\n# Create a map of the suitable area within each Exclusive Economic Zone.\ntm_graticules() +\ntm_basemap(\"OpenStreetMap\") +\ntm_shape(west_coast) +\n  tm_polygons(fill = \"suitable_area_bin_oysters\",\n              fill.scale = tm_scale(values = \"brewer.pu_rd\"),\n              fill.legend = tm_legend(expression(\"Area km\"^{2}))) +\n  tm_title(text = \"Suitable Area of Oysters\")\nThis map compares the suitability of each region. Highlighting which regions have the highest area in km\\(^2\\) that can support a given species, in this case we are looking at oysters."
   }
 ]

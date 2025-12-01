@@ -10,3 +10,39 @@ categories: [MEDS, R]
 # draft-mode: linked # hides the post on the listing page, the url exists just hides it from main website.
 # bibliography: references.bib
 ---
+
+# Determining Exclusive Economic Zones for Marine Aquaculture Species 
+
+Marine aquaculture can play a vital role in the global food supply. Using the ideal depth range and temperature range of different species, we can identify areas within the designated Exclusive Economic Zones along the west coast that would be suitable for marine aquaculture.
+
+
+### Spatial Analysis
+
+Using raster data we can... what is rasters?
+
+
+```r
+# Creating a table of suitable area in each region.
+suitable_df <- west_coast %>% 
+  select("rgn", "suitable_area_oysters") %>% 
+  st_drop_geometry() %>% 
+  kable(col.names = c("Region", "Suitable Area (km^2)"),
+        caption = "Table 1: Suitable Area (km$^2$) for Oysters") %>% 
+  kable_styling(bootstrap_options = "hover",
+                position = "center") 
+suitable_df
+```
+INSERT THE TABLE
+
+```r
+# Create a map of the suitable area within each Exclusive Economic Zone.
+tm_graticules() +
+tm_basemap("OpenStreetMap") +
+tm_shape(west_coast) +
+  tm_polygons(fill = "suitable_area_bin_oysters",
+              fill.scale = tm_scale(values = "brewer.pu_rd"),
+              fill.legend = tm_legend(expression("Area km"^{2}))) +
+  tm_title(text = "Suitable Area of Oysters")
+```
+
+This map compares the suitability of each region. Highlighting which regions have the highest area in km$^2$ that can support a given species, in this case we are looking at oysters. 
