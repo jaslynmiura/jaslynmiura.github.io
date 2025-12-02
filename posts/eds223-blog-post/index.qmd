@@ -16,7 +16,12 @@ output:
 # bibliography: references.bib
 ---
 
-```{r, include = FALSE}
+# Determining Exclusive Economic Zones for Marine Aquaculture Species 
+
+Marine aquaculture can play a vital role in the global food supply. Using the ideal depth range and temperature range of different species, we can identify areas within the designated Exclusive Economic Zones along the west coast that would be suitable for marine aquaculture.
+
+```{r, message = FALSE, warning=FALSE}
+#| code-fold: true
 library(tidyverse)
 library(terra)
 library(sf)
@@ -28,14 +33,14 @@ library(kableExtra)
 library(knitr)
 ```
 
-# Determining Exclusive Economic Zones for Marine Aquaculture Species 
-
-Marine aquaculture can play a vital role in the global food supply. Using the ideal depth range and temperature range of different species, we can identify areas within the designated Exclusive Economic Zones along the west coast that would be suitable for marine aquaculture.
-
 ## Data Cleaning
 
+*NOTE: When conducting a spatial analyses, we often want to ensure that our spatial objects have the same coordinate reference systems, resolutions, extents, etc. If statements and unit checks can be written within our code to check these conditions. These "gut checks" were written within the code folds.*
+
+For this analysis, we'll be using Sea Surface Temperature rasters from 2008-2012. These rasters were obtained from the NOAA’s 5km Daily Global Satellite Sea Surface Temperature Anomaly v3.1. We'll first stack the rasters into a single-multilayer raster. We will then calculate the mean sea surface temperature value for each cell across the five years. Therefore, each cell within `avg_sst_rast` represents the average sea surface temperature from 2008 to 2012 at that location. We'll also convert the temperature units from Kelvin to Celsius by subtracting 273.15, using raster algebra
+
 ```{r, output = FALSE}
-# Load in Sea Surface Temperature raster.
+# Load in Sea Surface Temperature rasters.
 sst_08 <- rast(here::here('posts', 'eds223-blog-post', 'data', 'average_annual_sst_2008.tif'))
 sst_09 <- rast(here::here('posts', 'eds223-blog-post', 'data', 'average_annual_sst_2009.tif'))
 sst_10 <- rast(here::here('posts', 'eds223-blog-post', 'data', 'average_annual_sst_2010.tif'))
@@ -58,12 +63,15 @@ avg_sst_rast <- mean(sst)
 avg_sst_rast <- avg_sst_rast - 273.15
 ```
 
+Depth is another parameter we need for our analysis. This data was obtained from the General Bathymetric Chart of the Oceans (GEBCO). First, we'll crop the raster to match the extent of the `avg_sst_rast`, to ensure that both rasters are within the same study area. We also want to make sure that the resolution of the rasters are the same. So we will resample the cropped depth raster to match the resolution of the `avg_sst_rast`, using the nearest neighbor method. This method assigns each output cell the value of the closest input cell, therefore the depth value in the `depth_resample` raster is simply the value from the nearest pixel in the original `depth` raster.
+
 ```{r}
 # Loading the depth raster.
 depth <- rast(here::here('posts', 'eds223-blog-post', 'data', 'depth.tif'))
 ```
 
 ```{r}
+#| code-fold: true
 # Check if coordinate reference systems match.
 if(crs(avg_sst_rast) == crs(depth)) {
   print("Coordinate reference systems match")
@@ -85,6 +93,7 @@ depth_resample <- resample(depth_crop, y = avg_sst_rast, method = "near")
 ```
 
 ```{r}
+#| code-fold: true
 # Check that the depth_resample and avg_sst_rast match in resolution, extent, and crs.
 if(crs(avg_sst_rast) == crs(depth_resample)) {
   print("Coordinate reference systems match!")
@@ -109,7 +118,7 @@ if(ext(avg_sst_rast) == ext(depth_resample)) {
 
 ## Spatial Analysis
 
-Using raster data we can... what is rasters?
+We'll now reclassify our rasters, given certain parameters, using a reclassification matrix. Within the temperature matrix we are setting cells that have a sea surface temperature of 11-30 degrees Celsius as 1, and any other values as 0. Within the depth matrix we are setting cells that have a depth of -70-0 meters to 1, and any other values as 0. By reclassifying our rasters, we can then multiple the reclassified rasters to create a new raster, `suitable_eez`, which only selects the areas where 1x1=1.
 
 ```{r}
 # Reclassify avg_sst_rast into locations that are suitable for oysters.
@@ -221,7 +230,7 @@ tm_shape(west_coast) +
 
 This map compares the suitability of each region. Highlighting which regions have the highest area in km$^2$ that can support a given species, in this case we are looking at oysters. 
 
-```{r}
+```{r, echo=FALSE,results='asis'}
 # Create a function to find suitable area for any species.
 suitable_eez_fun <- function(min_temp, max_temp, min_depth, max_depth, species_name) {
   
@@ -286,8 +295,19 @@ suitable_eez_fun <- function(min_temp, max_temp, min_depth, max_depth, species_n
                  fill.legend = tm_legend(expression("Area km"^{2}))) +
      tm_title(text = paste("Suitable EEZ for", str_to_title(species_name))) +
      tmap_options(component.autoscale = FALSE)
+   
+   # Creating a table of suitable area in each region.
+   suitable_df_select_species <- west_coast_species %>% 
+     select("rgn", "suitable_area_select_species") %>% 
+     st_drop_geometry() %>% 
+     kable(escape = FALSE,
+           col.names = c("Region", "Suitable Area (km²)"),
+           caption = paste("Table 1: Suitable Area (km²) for", str_to_title(species_name))) %>% 
+     kable_styling(bootstrap_options = "hover",
+                   position = "center") 
 
-  print(species_map)
+  species_map
+  suitable_df_select_species
   
 }
 
