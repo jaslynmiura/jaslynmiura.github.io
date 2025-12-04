@@ -155,6 +155,7 @@ west_coast <- st_read(here::here('posts', 'eds223-blog-post', 'data', 'wc_region
 ```
 
 ```{r, output = FALSE}
+#| code-fold: true
 # Check if the coordinate systems match.
 if(crs(suitable_eez) == crs(west_coast)) {
   print("Coordinate reference systems match")
