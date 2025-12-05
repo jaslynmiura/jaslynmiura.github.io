@@ -8,9 +8,9 @@
 
 <meta name="author" content="Jaslyn Miura">
 <meta name="dcterms.date" content="2025-11-27">
-<meta name="description" content="Spatial analysis of suitable areas for marine aquaculture">
+<meta name="description" content="Spatial analysis of suitable habitat areas along the west coast (USA) for marine aquaculture">
 
-<title>EDS 223 Blog Post – Jaslyn Miura</title>
+<title>Determining Exclusive Economic Zones for Marine Aquaculture Species – Jaslyn Miura</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,10 +107,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<link href="../../site_libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet">
-<script src="../../site_libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -194,10 +190,10 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">EDS 223 Blog Post</h1>
+      <h1 class="title">Determining Exclusive Economic Zones for Marine Aquaculture Species</h1>
                   <div>
         <div class="description">
-          Spatial analysis of suitable areas for marine aquaculture
+          Spatial analysis of suitable habitat areas along the west coast (USA) for marine aquaculture
         </div>
       </div>
                           <div class="quarto-categories">
@@ -245,15 +241,12 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#determining-exclusive-economic-zones-for-marine-aquaculture-species" id="toc-determining-exclusive-economic-zones-for-marine-aquaculture-species" class="nav-link active" data-scroll-target="#determining-exclusive-economic-zones-for-marine-aquaculture-species">Determining Exclusive Economic Zones for Marine Aquaculture Species</a>
-  <ul class="collapse">
-  <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning">Data Cleaning</a></li>
+  <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link active" data-scroll-target="#data-cleaning">Data Cleaning</a></li>
   <li><a href="#spatial-analysis" id="toc-spatial-analysis" class="nav-link" data-scroll-target="#spatial-analysis">Spatial Analysis</a>
   <ul class="collapse">
   <li><a href="#determine-the-most-suitable-eez." id="toc-determine-the-most-suitable-eez." class="nav-link" data-scroll-target="#determine-the-most-suitable-eez.">Determine the most suitable EEZ.</a></li>
   </ul></li>
-  <li><a href="#identifying-other-suitable-regions-for-marine-species" id="toc-identifying-other-suitable-regions-for-marine-species" class="nav-link" data-scroll-target="#identifying-other-suitable-regions-for-marine-species">Identifying other suitable regions for marine species</a></li>
-  </ul></li>
+  <li><a href="#identifying-regions-for-other-marine-species" id="toc-identifying-regions-for-other-marine-species" class="nav-link" data-scroll-target="#identifying-regions-for-other-marine-species">Identifying regions for other marine species</a></li>
   </ul>
 </nav>
     </div>
@@ -264,8 +257,6 @@ window.Quarto = {
 
 
 
-<section id="determining-exclusive-economic-zones-for-marine-aquaculture-species" class="level1">
-<h1>Determining Exclusive Economic Zones for Marine Aquaculture Species</h1>
 <p>Marine aquaculture can play a vital role in the global food supply. Using the ideal depth range and temperature range of different species, we can identify areas within the designated Exclusive Economic Zones along the west coast that would be suitable for marine aquaculture.</p>
 <div class="cell">
 <details class="code-fold">
@@ -458,22 +449,23 @@ window.Quarto = {
 <span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(region_area, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"rgn_id"</span> <span class="ot">=</span> <span class="st">"ID"</span>)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a table of suitable area in each region.</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>suitable_df <span class="ot">&lt;-</span> west_coast <span class="sc">%&gt;%</span> </span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="st">"rgn"</span>, <span class="st">"suitable_area_oysters"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_drop_geometry</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Region"</span>, <span class="st">"Suitable Area (km^2)"</span>),</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">"Table 1: Suitable Area (km$^2$) for Oysters"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">"hover"</span>,</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">position =</span> <span class="st">"center"</span>) </span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>suitable_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Region"</span>, <span class="st">"Suitable Area (km²)"</span>),</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">"Table 1: Suitable Area (km²) for Oysters"</span>)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>suitable_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
-<table class="table table-hover caption-top table-sm table-striped small">
-<caption>Table 1: Suitable Area (km$^2$) for Oysters</caption>
+<table class="caption-top table table-sm table-striped small">
+<caption>Table 1: Suitable Area (km²) for Oysters</caption>
 <thead>
 <tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Region</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Suitable Area (km^2)</th>
+<th style="text-align: left;">Region</th>
+<th style="text-align: right;">Suitable Area (km²)</th>
 </tr>
 </thead>
 <tbody>
@@ -501,6 +493,7 @@ window.Quarto = {
 </table>
 </div>
 </div>
+<p>This table identifies the exact area that is determined to be suitable for Oysters. Looking at our map it may appear that the Central and Southern California regions both have the same amount of area suitable for Oysters, but this table tells us that the prime zone would be the Central California.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a map of the suitable area within each Exclusive Economic Zone.</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_graticules</span>() <span class="sc">+</span></span>
@@ -519,12 +512,18 @@ window.Quarto = {
 </div>
 </div>
 <p>This map compares the suitability of each region. Highlighting which regions have the highest area in km<span class="math inline">\(^2\)</span> that can support a given species, in this case we are looking at oysters.</p>
-<table class="table table-hover caption-top">
+</section>
+</section>
+<section id="identifying-regions-for-other-marine-species" class="level2">
+<h2 class="anchored" data-anchor-id="identifying-regions-for-other-marine-species">Identifying regions for other marine species</h2>
+<p>To identify other suitable regions for other marine species, a function was created, where only parameters required are the depth and temperature ranges, and the species name we are interested in. This function will create a map of new species we are interested in. The map identifies the regions along the west coast that contains the largest suitable areas for the marine species.</p>
+<p><img src="index_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
+<table class="caption-top table">
 <caption>Table 1: Suitable Area (km²) for Red Abalone</caption>
 <thead>
 <tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Region</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Suitable Area (km²)</th>
+<th style="text-align: left;">Region</th>
+<th style="text-align: right;">Suitable Area (km²)</th>
 </tr>
 </thead>
 <tbody>
@@ -550,17 +549,22 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="identifying-other-suitable-regions-for-marine-species" class="level2">
-<h2 class="anchored" data-anchor-id="identifying-other-suitable-regions-for-marine-species">Identifying other suitable regions for marine species</h2>
-<p>To identify other suitable regions for other marine species, a function was created, where only parameters required are the depth and temperature ranges, and the species name we are interested in. This function will create a map of new species we are interested in. The map identifies the regions along the west coast that contains the largest suitable areas for the marine species.</p>
 
 
 </section>
-</section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{miura2025,
+  author = {Miura, Jaslyn},
+  title = {Determining {Exclusive} {Economic} {Zones} for {Marine}
+    {Aquaculture} {Species}},
+  date = {2025-11-27},
+  url = {https://jaslynmiura.github.io/posts/eds223-blog-post/},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-miura2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+Miura, Jaslyn. 2025. <span>“Determining Exclusive Economic Zones for
+Marine Aquaculture Species.”</span> November 27, 2025. <a href="https://jaslynmiura.github.io/posts/eds223-blog-post/">https://jaslynmiura.github.io/posts/eds223-blog-post/</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
