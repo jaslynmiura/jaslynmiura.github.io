@@ -334,6 +334,14 @@ suitable_eez_fun(min_temp = 8,
 
 #### References:
 
-Lester, S. E., Gentry, R. R., & Froehlich, H. E. (2024). The role of marine aquaculture in contributing to the diversity and stability of U.S. seafood production. Marine Policy, 160, 105994. https://doi.org/10.1016/j.marpol.2023.105994
+Flanders Marine Institute (2025): MarineRegions.org. Available online at [www.marineregions.org](www.marineregions.org). Consulted on 2025-11-28.
 
-What is the “EEZ”? - NOAA Ocean Exploration. (2023a, January 6). NOAA Ocean Exploration. https://oceanexplorer.noaa.gov/ocean-fact/useez/
+Gridded Bathymetry Data (2025). [depth.tif] General Bathymetric Chart of the Oceans. [https://www.gebco.net/data-products/gridded-bathymetry-data#toc-terms-of-use](https://www.gebco.net/data-products/gridded-bathymetry-data#toc-terms-of-use)
+
+Lester, S. E., Gentry, R. R., & Froehlich, H. E. (2024). The role of marine aquaculture in contributing to the diversity and stability of U.S. seafood production. Marine Policy, 160, 105994. [https://doi.org/10.1016/j.marpol.2023.105994](https://doi.org/10.1016/j.marpol.2023.105994)
+
+NOAA Coral Reef Watch. 2018, updated daily. NOAA Coral Reef Watch Version 3.1 Daily Global 5km Satellite Coral Bleaching Degree Heating Week Product, Jun. 3, 2013-Jun. 2, 2014. College Park, Maryland, USA: NOAA Coral Reef Watch. Data set accessed 2020-09-01 at [ftp://ftp.star.nesdis.noaa.gov/pub/sod/mecb/crw/data/5km/v3.1/nc/v1.0/daily/dhw/](ftp://ftp.star.nesdis.noaa.gov/pub/sod/mecb/crw/data/5km/v3.1/nc/v1.0/daily/dhw/).
+
+Palomares, M.L.D. and D. Pauly. Editors. 2025. SeaLifeBase. World Wide Web electronic publication. [www.sealifebase.org](www.sealifebase.org), version (04/2025).
+
+What is the “EEZ”? - NOAA Ocean Exploration. (2023a, January 6). NOAA Ocean Exploration. [https://oceanexplorer.noaa.gov/ocean-fact/useez/](https://oceanexplorer.noaa.gov/ocean-fact/useez/)
