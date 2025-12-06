@@ -1,0 +1,40 @@
+---
+title: "About"
+---
+
+Growing up in Hawaiʻi, Jaslyn was surrounded by a community and unique ecosystems that shaped her love for the environment. Learning about Hawaiian culture that is deeply intertwined with the land while also witnessing the effects of climate change on her home, inspired Jaslyn to work in the environmental science field. Jaslyn intends to return to Hawaiʻi to work alongside her community to apply traditional ecological knowledge and data science to advance sustainable development and conservation.
+
+### Education
+
+------------------------------------------------------------------------
+
+**University of Washington** \| Seattle, WA
+
+B.S. Environmental Science and Terrestrial Resource Management with a minor in Quantitative Science \| September 2021 - June 2025
+
+**University of California, Santa Barbara** \| Santa Barbara, CA
+
+Master's of Environmental Data Science \| August 2025 - June 2026 (expected)
+
+### What I've Done
+
+---------------------------------------------------
+
+**Summer Undergraduate Research Fellow** - Pacific Island Ecosystem Research Center
+
+•	Wrangled climate and spatial data by utilizing the tidyverse and sf packages in R to conduct a spatial analysis of the biomes in Hawaiʻi.
+•	Created various maps and graphs to deliver a final presentation summarizing research findings to cohort peers and supervisors
+•	Supported various fieldwork projects involving seed collection and bird banding.
+
+**Plant Macrofossil Photographer** - Strömberg Paleobotany Lab, University of Washington
+
+•	Handled macrofossil specimens and operated museum camera equipment and software to produce high-quality photographs, to contribute to the study of understand plant ecology in the Pacific Northwest during the mid-Miocene climatic optimum.
+•	Adhered to proper file organization and open-window museum workspace protocols.
+
+**Data Analysis Intern** - Quantitative Ecology Lab, University of Washington
+
+•	Managed and processed high-volume camera trap imagery sets by downloading, reviewing, and classifying species and human activity, to explore relationships between human activities and wildlife spatial and temporal patterns.
+
+------------------------------------------------------------------------
+
+### Professional Interests

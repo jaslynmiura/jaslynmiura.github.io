@@ -1,0 +1,24 @@
+---
+title: "My First Blog Post!!"
+description: "a tiny description of the blog post"
+date: 2025-11-12
+categories: [MEDS, R]
+# image: 'filepath of the image in the first-blog-post file, put image in the first-blog-post/'
+citation:
+  url: https://jaslynmiura.github.io/posts/my-first-blog-post/
+draft: true
+draft-mode: linked # hides the post on the listing page, the url exists just hides it from main website.
+bibliography: references.bib
+---
+
+# Header?
+
+This is where the body of my blog post begins! I'm going to add a footnote here[^1]. Here's and inline footnote[^2]
+
+[^1]: Here is some additional context that might be helpful.
+
+[^2]: here's my inline note
+
+I'm going to cite Sam here[@shanny-csik2022]
+
+Let's cite a paper using it's DOI[@gaynor2022]

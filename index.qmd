@@ -1,0 +1,23 @@
+---
+title: "Jaslyn Miura"
+image: jaslyn_miura_edit_Medium.jpeg
+about:
+  template: solana
+  image-shape: round
+  image-width: 17em
+  links: 
+    - text: LinkedIn
+      icon: linkedin
+      href: https://www.linkedin.com/in/jaslyn-miura/
+      target: _blank
+    - text: GitHub
+      icon: github
+      href: https://github.com/jaslynmiura
+      target: _blank
+    - text: Email
+      icon: inbox
+      href: mailto:jaslyntmiura@ucsb.edu
+---
+
+I am a student in the data science field, inspired by my Hawaiʻi community, where the relationship between the land and people fuels my passion to protect the environment I grew up with, using the intersection of technology and tradition. 
+
