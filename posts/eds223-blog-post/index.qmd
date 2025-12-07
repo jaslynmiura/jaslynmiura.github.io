@@ -1,6 +1,6 @@
 ---
 title: "Determining Exclusive Economic Zones for Marine Aquaculture Species"
-description: "Spatial analysis of suitable habitat areas along the west coast (USA) for marine aquaculture"
+description: "Spatial analysis of suitable habitat areas along the west coast (USA) for marine aquaculture."
 date: 2025-12-5
 categories: [MEDS, R]
 output:
@@ -18,15 +18,15 @@ citation:
 
 #### **Analysis Question:** 
 
-How can sea surface temperature and depth rasters be used to determine what areas may be suitable to raise different marine aquaculture species?
+How can sea surface temperature and ocean depth rasters be used to determine what areas may be suitable to raise different marine aquaculture species?
 
 ### Background
 
-Seafood production in the United States is currently dominated by wild fisheries harvests. While marine aquaculture makes up a small portion of seafood production, however this method of production has been expanding over the past few decades with an approximately 70% increase in marine hectares farmed (Lester et al., 2024). By expanding marine aquaculture, this adds diversity to methods, geographic diversity, and species produced. Diversity within our food systems is vital as it makes it more resilient to disturbances, such as climate change or supply chain failures. 
+Seafood production in the United States is currently dominated by wild fisheries harvests. Marine aquaculture makes up a small portion of seafood production, however this method of production has been expanding over the past few decades with an approximately 70% increase in marine hectares farmed (Lester et al., 2024). By expanding marine aquaculture, this adds diversity to methods, geographic diversity, and species to seafood production. Diversity within our food systems is vital as it makes it more resilient to disturbances, such as climate change or supply chain failures. 
 
-A first step to understanding where marine aquaculture can be implemented in the United States, is first identifying where marine aquaculture farms can be located. Each coastal nation has an Exclusive Economic Zone, which is an area of the ocean, generally extending 200 nautical miles (230 miles) beyond a nation’s territorial sea, within which a coastal nation has jurisdiction over both living and nonliving resources (NOAA, 2023). Meaning the country has special rights to explore, exploit, and manage marine resources. Therefore, suitable areas for marine aquaculture in the United States can be identified within these Exclusive Economic Zones. 
+A first step to understanding where marine aquaculture can continue to expand and be implemented in the United States, is first identifying where marine aquaculture farms can be located. Each coastal nation has an Exclusive Economic Zone (EEZ), which is an area of the ocean, generally extending 200 nautical miles (230 miles) beyond a nation’s territorial sea, within which a coastal nation has jurisdiction over both living and nonliving resources (NOAA, 2023). Meaning the country has special rights to explore, exploit, and manage marine resources. Therefore, suitable areas for marine aquaculture in the United States can be identified within these Exclusive Economic Zones. 
 
-By identifying spatial and environmental requirements for aquaculture farms and marine species, we can map the suitable areas where various species can be raised.
+By identifying spatial and environmental requirements for aquaculture farms and marine species, we can map the suitable areas where various species can be raised, within in the EEZs.
 
 ```{r, message = FALSE, warning=FALSE}
 #| code-fold: true
