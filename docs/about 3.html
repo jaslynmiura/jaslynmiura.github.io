@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Posts – Jaslyn Miura</title>
+<title>About – Jaslyn Miura</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./images/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -71,65 +69,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -156,11 +96,11 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link active" href="./about.html" aria-current="page"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page"> 
+    <a class="nav-link" href="./posts.html"> 
 <span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
@@ -184,14 +124,22 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="TUVEUw==">MEDS <span class="quarto-category-count">(3)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(2)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#education" id="toc-education" class="nav-link active" data-scroll-target="#education">Education</a></li>
+  <li><a href="#what-ive-done" id="toc-what-ive-done" class="nav-link" data-scroll-target="#what-ive-done">What I’ve Done</a></li>
+  <li><a href="#professional-interests" id="toc-professional-interests" class="nav-link" data-scroll-target="#professional-interests">Professional Interests</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Posts</h1>
+<h1 class="title">About</h1>
 </div>
 
 
@@ -208,108 +156,33 @@ window.Quarto = {
 </header>
 
 
+<p>Growing up in Hawaiʻi, Jaslyn was surrounded by a community and unique ecosystems that shaped her love for the environment. Learning about Hawaiian culture that is deeply intertwined with the land while also witnessing the effects of climate change on her home, inspired Jaslyn to work in the environmental science field. Jaslyn intends to return to Hawaiʻi to work alongside her community to apply traditional ecological knowledge and data science to advance sustainable development and conservation.</p>
+<section id="education" class="level3">
+<h3 class="anchored" data-anchor-id="education">Education</h3>
+<hr>
+<p><strong>University of Washington</strong> | Seattle, WA</p>
+<p>B.S. Environmental Science and Terrestrial Resource Management with a minor in Quantitative Science | September 2021 - June 2025</p>
+<p><strong>University of California, Santa Barbara</strong> | Santa Barbara, CA</p>
+<p>Master’s of Environmental Data Science | August 2025 - June 2026 (expected)</p>
+</section>
+<section id="what-ive-done" class="level3">
+<h3 class="anchored" data-anchor-id="what-ive-done">What I’ve Done</h3>
+<hr>
+<p><strong>Summer Undergraduate Research Fellow</strong> - Pacific Island Ecosystem Research Center</p>
+<p>• Wrangled climate and spatial data by utilizing the tidyverse and sf packages in R to conduct a spatial analysis of the biomes in Hawaiʻi. • Created various maps and graphs to deliver a final presentation summarizing research findings to cohort peers and supervisors • Supported various fieldwork projects involving seed collection and bird banding.</p>
+<p><strong>Plant Macrofossil Photographer</strong> - Strömberg Paleobotany Lab, University of Washington</p>
+<p>• Handled macrofossil specimens and operated museum camera equipment and software to produce high-quality photographs, to contribute to the study of understand plant ecology in the Pacific Northwest during the mid-Miocene climatic optimum. • Adhered to proper file organization and open-window museum workspace protocols.</p>
+<p><strong>Data Analysis Intern</strong> - Quantitative Ecology Lab, University of Washington</p>
+<p>• Managed and processed high-volume camera trap imagery sets by downloading, reviewing, and classifying species and human activity, to explore relationships between human activities and wildlife spatial and temporal patterns.</p>
+<hr>
+</section>
+<section id="professional-interests" class="level3">
+<h3 class="anchored" data-anchor-id="professional-interests">Professional Interests</h3>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="TUVEUyUyQ1I=" data-listing-date-sort="1765447200000" data-listing-file-modified-sort="1765508831423" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="23" data-listing-word-count-sort="4449">
-<a href="./posts/eds222-blog-post/analysis.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/eds222-blog-post/images/moorea_reef.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Grazing Patterns of Herbivorous Fish in Moʻorea
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TUVEUw=='); return false;">MEDS</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>EDS 222 Final Project: Statistical Analysis of bite rates on coral reefs in Moʻorea</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Jaslyn Miura
-</div>
-<div class="listing-date">
-Dec 11, 2025
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="TUVEUyUyQ1I=" data-listing-date-sort="1765447200000" data-listing-file-modified-sort="1765524252294" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2790">
-<a href="./posts/eds223-blog-post/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/eds223-blog-post/images/aquaculture.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Determining Exclusive Economic Zones for Marine Aquaculture Species
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TUVEUw=='); return false;">MEDS</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Spatial analysis of suitable habitat areas along the west coast (USA) for marine aquaculture.</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Jaslyn Miura
-</div>
-<div class="listing-date">
-Dec 11, 2025
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="TUVEUyUyQ1B5dGhvbg==" data-listing-date-sort="1765447200000" data-listing-file-modified-sort="1765520052803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1494">
-<a href="./posts/eds220-blog-post/fires-blog.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/eds220-blog-post/images/fire_picture.jpeg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Mapping the 2025, Eaton and Palisades Fire Effects
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TUVEUw=='); return false;">MEDS</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Spatial analysis in Python of fire effects.</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Jaslyn Miura
-</div>
-<div class="listing-date">
-Dec 11, 2025
-</div>
-</div>
-</div>
-</div></a>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
