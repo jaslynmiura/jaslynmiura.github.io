@@ -8,7 +8,7 @@
 
 <meta name="author" content="Jaslyn Miura">
 <meta name="dcterms.date" content="2025-12-11">
-<meta name="description" content="EDS 222 Final Project: Statistical Analysis of bite rates on coral reefs in Moʻorea">
+<meta name="description" content="Statistical Analysis of bite rates on coral reefs in Moʻorea">
 
 <title>Grazing Patterns of Herbivorous Fish in Moʻorea – Jaslyn Miura</title>
 <style>
@@ -195,7 +195,7 @@ window.Quarto = {
       <h1 class="title">Grazing Patterns of Herbivorous Fish in Moʻorea</h1>
                   <div>
         <div class="description">
-          EDS 222 Final Project: Statistical Analysis of bite rates on coral reefs in Moʻorea
+          Statistical Analysis of bite rates on coral reefs in Moʻorea
         </div>
       </div>
                           <div class="quarto-categories">
@@ -275,7 +275,7 @@ window.Quarto = {
 <section id="background" class="level1">
 <h1>Background</h1>
 <p>Due to changing climate conditions, macroalgae coverage can impact the transitional phases in coral colonization. Because coral reefs play such a vital role in ecosystem services, understanding coral reef dynamics is important. One component of this is understanding how the macroalgae within these systems are being controlled. The herbivorous fishes Chlorurus sordidus, commonly known as parrot fish, and Ctenochaetus striatus, commonly known as striated surgeonfish, are essential reef fish species that feed directly on algae, therefore influencing the health of coral reefs.</p>
-<p>This observation data was collected from coral reefs around Moʻorea, French Polynesia, at research stations LTER 1 and Resilience 2. Focal fish species were identified by a SCUBA diver, an estimated fish length (cm), the depth at the start and end of the observation period, substrate types, and the number of bites taken within 5 minutes was recorded. The data was collected over several days in July and August of 2010 between the times of 10:00 and 16:00, an identified period of time which corresponds to peak feeding rates for many herbivorous fishes (Adam, 2019).</p>
+<p>Observation data was collected from coral reefs around Moʻorea, French Polynesia, at research stations LTER 1 and Resilience 2. Focal fish species were identified by a SCUBA diver, an estimated fish length (cm), the depth at the start and end of the observation period, substrate types, and the number of bites taken within 5 minutes was recorded. The data was collected over several days in July and August of 2010 between the times of 10:00 and 16:00, an identified period of time which corresponds to peak feeding rates for many herbivorous fishes (Adam, 2019).</p>
 <p>Using this data, we want to understand how herbivore grazing bite counts are influenced by fish size, species, depth, and substrate.</p>
 <section id="data-collection-and-cleaning" class="level2">
 <h2 class="anchored" data-anchor-id="data-collection-and-cleaning">Data Collection and Cleaning</h2>
@@ -332,11 +332,11 @@ window.Quarto = {
 <span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>         <span class="at">dominant_substrate =</span> <span class="fu">factor</span>(dominant_substrate))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<p>The data source provides two datasets that hold data from observations from different dates and locations. After stacking the dataframes, columns that were not required for the analysis were dropped. Some cleaning of our variables was conducted. A <code>mean_depth</code> column was created, which is the average depth during each observation. This was created by taking the average depth between the recorded depth at the start and end of the observation. A <code>dominant_substrate</code> column was also created, which represents the substrate that was bitten the most of all the possible substrates. This was done by detecting which substrate had the highest number of bites for each observed fish.</p>
+<p>The data source provides two datasets that hold observational dat from different dates and locations in Moʻorea. After stacking the dataframes, columns that were not required for the analysis were dropped. Some cleaning of our variables was also conducted. A <code>mean_depth</code> column was created, which is the average depth during each observation. This was created by taking the average depth between the recorded depth at the start and end of the observation. A <code>dominant_substrate</code> column was also created, which represents the substrate that was bitten the most of all the possible substrates. This was done by detecting which substrate had the highest number of bites for each observed fish.</p>
 </section>
 <section id="data-exploration" class="level2">
 <h2 class="anchored" data-anchor-id="data-exploration">Data Exploration</h2>
-<p>We’ll begin with basic data exploration by plotting fish body length (cm) and depth (m) against the total bite count to visualize any potential relationships between these variables and our response variable, total number of bites. We also want to know the shape of the total bite count distribution to help determine what statistical model we should use for our analysis.</p>
+<p>We’ll begin with basic data exploration by plotting fish body length (cm) and depth (ft) against the total bite count to visualize any potential relationships between these variables and our response variable, total number of bites. We also want to know the shape of the total bite count distribution to help determine what statistical model we should use for our analysis.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -446,7 +446,7 @@ window.Quarto = {
 [1] "Mean: 119.786585365854"</code></pre>
 </div>
 </div>
-<p><strong>What model?</strong>: Since we are dealing with count data, <code>total_bites</code>, our model options are Poisson Regression or Negative Binomial Regression. Since the Poisson distribution assumes that the mean and variance are equal, which is an assumption that our data does not meet. The mean of <code>total_bites</code> is 4127.2977331 and the variance of <code>total_bites</code> is 4127.2977331. Since the variance is greater than the mean, the distribution of our count data, <code>total_bites</code>, exhibits overdispersion, which is a factor that the Negative Binomial Regression model accounts for.</p>
+<p><strong>What model?</strong>: Since we are dealing with count data our model options are Poisson Regression or Negative Binomial Regression. The Poisson distribution assumes that the mean and variance are equal, which is an assumption that our data does not meet. The mean of <code>total_bites</code> is 4127.2977331 and the variance of <code>total_bites</code> is 4127.2977331. Since the variance is greater than the mean, the distribution of our count data, <code>total_bites</code>, exhibits overdispersion, which is a factor that the Negative Binomial Regression model accounts for.</p>
 </section>
 <section id="negative-binomial-regression-model-notation" class="level2">
 <h2 class="anchored" data-anchor-id="negative-binomial-regression-model-notation">Negative Binomial Regression model notation:</h2>
@@ -811,8 +811,7 @@ log(\mu) &amp;= \beta_0 + \beta_1 \text{Size} + \beta_2 \text{Species} + \beta_3
 </section>
 <section id="generate-predictions-for-an-additive-interactive-negative-binomial-regresson-model" class="level2">
 <h2 class="anchored" data-anchor-id="generate-predictions-for-an-additive-interactive-negative-binomial-regresson-model">Generate Predictions for an Additive-Interactive Negative Binomial Regresson Model</h2>
-<p>Finally, we’ll generate expected bite count predictions from the new additive interactive Negative Binomial Regression model. The predictions will be generated varying the depth, <code>mean_depth</code>, and holding all other variables constant.</p>
-<p>The expected bite count predictions will be generated in response space, while the confidence interval for the expected bite count predictions will be generated in link space.</p>
+<p>Finally, we’ll generate expected bite count predictions from the new additive-interactive Negative Binomial Regression model. The predictions will be generated varying the depth, <code>mean_depth</code>, and holding all other variables constant.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the mean size, by species.</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>species_means <span class="ot">&lt;-</span> bite_data_clean <span class="sc">%&gt;%</span> </span>
@@ -874,7 +873,7 @@ log(\mu) &amp;= \beta_0 + \beta_1 \text{Size} + \beta_2 \text{Species} + \beta_3
 <span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Chlorurus sordidus (Parrotfish)"</span>, </span>
 <span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"Ctenochaetus striatus (Striated surgeonfish)"</span>)) <span class="sc">+</span></span>
 <span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species, <span class="at">scales =</span> <span class="st">"free_x"</span>) <span class="sc">+</span></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Depth (m)"</span>,</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Depth (ft)"</span>,</span>
 <span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Total Bite Counts"</span>,</span>
 <span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Species"</span>) <span class="sc">+</span> </span>
 <span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -888,7 +887,7 @@ log(\mu) &amp;= \beta_0 + \beta_1 \text{Size} + \beta_2 \text{Species} + \beta_3
 </div>
 </div>
 </div>
-<p>The figure displays the relationship between the depth (m) and total bite counts for parrotfish and striated surgeonfish, overlaid with predicted expected bite counts generated from the additive-interactive Negative Binomial Regression model. The 95% confidence interval is represented as the shaded grey region.</p>
+<p>The figure displays the relationship between the depth (ft) and total bite counts for parrotfish and striated surgeonfish, overlaid with predicted expected bite counts generated from the additive-interactive Negative Binomial Regression model. The 95% confidence interval is represented as the shaded grey region.</p>
 <p><strong>Connecting Coefficient Estimates to Predicted Bite Rates:</strong></p>
 <p>Recall our species x depth interaction effect coefficient interpretation: “The interaction between species and depth effect represents the differing bite rates between parrotfish and striated surgeonfish because of the depth effect. The interaction has a <strong>positive, statistically significant effect</strong>, indicating that <strong>striated surgeon fish experience a stronger increase in expected bite rates with increasing depth, compared to parrotfish (reference species)</strong>.”</p>
 <p>When generating predictions of expected bite counts, we <strong>varied our depth variable</strong> and <strong>held all the other predictor variables constant</strong>. By doing so, we should be able to visualize the interaction between species and depth effect within our predicted expected values.</p>
