@@ -148,8 +148,8 @@ This DAG illustrates our hypothesized causal structure between predictors and th
 
 **Hypothesis in Statistical Notation:**
 
-$$H_0: \beta_1 = 0 \\
-  H_A: \beta_1 \neq 0$$
+$$H_0: \beta_i = 0 \\
+  H_A: \beta_i \neq 0$$
 
 ```{r}
 # Find the mean and variance.
@@ -255,6 +255,13 @@ ggplot(data = bite_data_clean, aes(x = seconds_observed)) +
 ```
 
 ## Fitting an Additive Negative Binomial Regression Model
+
+$$
+\begin{aligned}
+\text{BiteCount} &\sim Negative Binomial(\mu, \theta) \\
+log(\mu) &= \beta_0 + \beta_1 \text{Size} + \beta_2 \text{Species} + \beta_3 \text{Depth} + \beta_4 \text{Substrate} \\
+\end{aligned}
+$$
 
 ```{r}
 # Fitting a additive Negative Binomial Regression model.
@@ -365,6 +372,13 @@ For both parrotfish and striated surgeonfish, the predicted expected bite count 
 ## Fit an Additive-Interactive Negative Binomial Regression Model
 
 Since depth showed a statistically significant positive effect in the additive model above, I wanted to test whether this effect was consistent between the species. A species x depth interaction within the Negative Binomial Regression model will detect if the relationship between depth and bite rate differs among the two species.
+
+$$
+\begin{aligned}
+\text{BiteCount} &\sim Negative Binomial(\mu, \theta) \\
+log(\mu) &= \beta_0 + \beta_1 \text{Size} + \beta_2 \text{Species} + \beta_3 \text{Depth} + \beta_4 \text{(Species x Depth)} + \beta_5{Substrate} \\
+\end{aligned}
+$$
 
 ```{r}
 # Fitting a additive Negative Binomial Regression model.
@@ -481,6 +495,21 @@ When generating predictions of expected bite counts, we **varied our depth varia
 For both parrotfish and striated surgeonfish, the predicted expected bite counts slope curves upward as depth increases. However, as depth increases, the upward curve of the slope is steeper for striated surgeon fish. Indicating that striated surgeon fish experience a stronger increase in expected bite rates with increasing depth, compared to parrotfish. This aligns with the statistically significant positive coefficient for the depth and species interaction effect in the additive-interactive model.
 
 # Conclusions
+
+Referring back to our hypothesis: 
+
+**Null Hypothesis:** Either size, species, depth, or substrate have no effect on bite count.
+
+**Alternative Hypothesis:** A predictor/predictors have an effect on bite count.
+
+**Hypothesis in Statistical Notation:**
+
+$$H_0: \beta_i = 0 \\
+  H_A: \beta_i \neq 0$$
+  
+From the additive Negative Binomial Regression model, are statistically significant effects on total bite count were size and depth. Therefore, we would reject the null hypothesis that the predictor size or depth have no effect on bite count. The additive model provides evidence that the relationship between these predictors and total bite count is not due to chance.
+
+From the additive-interactive Negative Binomial Regression model, are statistically significant effects on total bite count were size and the species x depth interaction. Therefore, we would reject the null hypothesis that the predictors size and depth have no effect on bite count. Again, the additive-interactive model provides evidence that the relationship between these predictors and total bite count is not due to chance.
 
 From this analysis, we found that size has a significant effect on total bite counts, where larger fish take fewer bites. Another significant finding was that there was a significant effect of the interaction of species and depth. This indicates that there are different feeding behaviors of the species at different depths. After collecting these results, further research can be done to understand the behaviors of the species at different depths, which would include collecting other variables that could have an effect on bite counts. Such as different environmental factors, such as temperature, pH levels, presence of other species, etc. This analysis could provide a baseline for stakeholders when it comes to conservation decision-making. For example, by using this analysis and with further research, size limits can be created or updated to protect the size range of species that feed the most on the coral reefs.
 
