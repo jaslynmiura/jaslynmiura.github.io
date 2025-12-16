@@ -3,7 +3,7 @@ title: "Jaslyn Miura"
 image: jaslyn_miura_edit_Medium.jpeg
 about:
   template: solana
-  image-shape: round
+  image-shape: rounded
   image-width: 17em
   links: 
     - text: LinkedIn
@@ -17,7 +17,39 @@ about:
     - text: Email
       icon: inbox
       href: mailto:jaslyntmiura@ucsb.edu
+lightbox: true
 ---
 
-I am a student in the data science field, inspired by my Hawaiʻi community, where the relationship between the land and people fuels my passion to protect the environment I grew up with, using the intersection of technology and tradition. 
+**Aloha!** I am a student in the data science field, inspired by my Hawaiʻi community, where the relationship between the land and people fuels my passion to protect the environment I grew up with, using the intersection of technology and tradition.
+
+When Iʻm not being a Data Scientist, you can find me trying new foods, cooking/baking, running, or watching the sunset. Check out my gallery of pictures of some of my favorite places and the work that Iʻve done!
+
+
+
+::: {layout-ncol=3}
+
+![](images/gallery/puako.jpeg){group="my-group"}
+
+![](images/gallery/mauumae.jpeg){group="my-group"}
+
+![](images/gallery/waimea.jpeg){group="my-group"}
+
+![](images/gallery/nuilii.jpeg){group="my-group"}
+
+![](images/gallery/burke.jpeg){group="my-group"}
+
+![](images/gallery/sb_sunset.jpeg){group="my-group"}
+
+![](images/gallery/field_work.jpeg){group="my-group"}
+
+![](images/gallery/kalo.jpeg){group="my-group"}
+
+![](images/gallery/seattle.jpeg){group="my-group"}
+
+:::
+
+
+
+
+
 

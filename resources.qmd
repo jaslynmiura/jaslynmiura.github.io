@@ -1,6 +1,8 @@
 ---
 title: "All of my favorite resources"
 format: html
+draft: true
+draft-mode: linked # hides the post on the listing page, the url exists just hides it from main
 ---
 
 <!-- <h1> this is an h1 element </h1> -->
@@ -20,11 +22,15 @@ format: html
 <!-- [Here's a full line]{.lavender-text} -->
 
 <!-- ::: {.lavender-text} -->
+
 <!-- Here's one line -->
 
 <!-- Here's another line -->
+
 <!-- ::: -->
 
 <!-- ::: {.center-text} -->
+
 <!-- this is centered -->
+
 <!-- ::: -->
