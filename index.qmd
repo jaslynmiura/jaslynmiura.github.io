@@ -3,8 +3,8 @@ title: "Jaslyn Miura"
 # image: jaslyn_miura.jpg
 about:
   template: solana
-  image-shape: rounded
-  image-width: 10em
+ # image-shape: rounded
+ # image-width: 10em
   links: 
     - text: LinkedIn
       icon: linkedin
