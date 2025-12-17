@@ -22,7 +22,7 @@ lightbox: true
 
 **Aloha!** I am a student in the data science field, inspired by my Hawaiʻi community, where the relationship between the land and people fuels my passion to protect the environment I grew up with, using the intersection of technology and tradition.
 
-When Iʻm not being a Data Scientist, you can find me trying new foods, cooking/baking, running, or watching the sunset. Check out my gallery of pictures of some of my favorite places and the work that Iʻve done!
+When Iʻm not being a Data Scientist, you can find me trying new foods, cooking/baking, running, or watching the sunset. Check out my gallery of some of my favorite places and the work that Iʻve done!
 
 
 
