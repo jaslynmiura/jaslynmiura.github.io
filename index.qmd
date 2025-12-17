@@ -1,6 +1,6 @@
 ---
 title: "Jaslyn Miura"
-image: jaslyn_miura.jpg
+# image: jaslyn_miura.jpg
 about:
   template: solana
   image-shape: rounded
