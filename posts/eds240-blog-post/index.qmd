@@ -3,11 +3,6 @@ title: "Global Natural Disasters"
 description: "Understanding global natural disasters through an infographic."
 date: 2026-03-19
 categories: [MEDS, R]
-output:
-  distill::distill_article:
-    toc: true
-    code_folding: true
-    self_contained: false
 # image: images/moorea_reef.jpg
 citation:
    url: https://jaslynmiura.github.io/posts/eds240-blog-post/
