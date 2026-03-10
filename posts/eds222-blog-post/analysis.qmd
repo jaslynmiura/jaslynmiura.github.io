@@ -496,7 +496,7 @@ For both parrotfish and striated surgeonfish, the predicted expected bite counts
 
 # Conclusions
 
-Referring back to our hypothesis: 
+Referring back to our hypothesis:
 
 **Null Hypothesis:** Either size, species, depth, or substrate have no effect on bite count.
 
@@ -506,7 +506,7 @@ Referring back to our hypothesis:
 
 $$H_0: \beta_i = 0 \\
   H_A: \beta_i \neq 0$$
-  
+
 From the additive Negative Binomial Regression model, are statistically significant effects on total bite count were size and depth. Therefore, we would reject the null hypothesis that the predictor size or depth have no effect on bite count. The additive model provides evidence that the relationship between these predictors and total bite count is not due to chance.
 
 From the additive-interactive Negative Binomial Regression model, are statistically significant effects on total bite count were size and the species x depth interaction. Therefore, we would reject the null hypothesis that the predictors size and depth have no effect on bite count. Again, the additive-interactive model provides evidence that the relationship between these predictors and total bite count is not due to chance.
