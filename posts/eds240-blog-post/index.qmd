@@ -548,6 +548,9 @@ stacked_bar <- ggplot(data = type_country, aes(x = country, y = disastertype_cou
 
 # Data Citation
 
-Rosvold, E., & Buhaug, H. (2021). Geocoded Disasters (GDIS) Dataset (Version 1.00) [Data set]. Palisades, NY: NASA Socioeconomic Data and Applications Center (SEDAC). https://doi.org/10.7927/ZZ3B-8Y61 Date Accessed: 2026-02-19
+Internal Displacement Monitoring Centre (IDMC). Internally displaced persons, new displacement associated with disasters (number of cases) [WB_WDI]. World Bank Group: World Development Indicators. [https://data.worldbank.org/indicator/VC.IDP.NWDS](https://data.worldbank.org/indicator/VC.IDP.NWDS) Date Accessed: 2026-02-25
 
-# Explore code
+Rosvold, E., & Buhaug, H. (2021). Geocoded Disasters (GDIS) Dataset (Version 1.00) [Data set]. Palisades, NY: NASA Socioeconomic Data and Applications Center (SEDAC). [https://doi.org/10.7927/ZZ3B-8Y61](https://doi.org/10.7927/ZZ3B-8Y61) Date Accessed: 2026-02-19
+
+World Population Prospects, United Nations (UN), et. al. Population, total [WB_WDI]. World Bank Group: World Development Indicators. [https://data.worldbank.org/indicator/SP.POP.TOTL](https://data.worldbank.org/indicator/SP.POP.TOTL) Date Accessed: 2026-02-25
+
