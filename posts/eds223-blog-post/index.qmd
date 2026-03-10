@@ -18,13 +18,13 @@ citation:
 
 ### Background
 
-Seafood production in the United States is currently dominated by wild fisheries harvests. Marine aquaculture makes up a small portion of seafood production, however this method of production has been expanding over the past few decades with an approximately 70% increase in marine hectares farmed (Lester et al., 2024). By expanding marine aquaculture, this adds diversity to methods, geographic diversity, and species to seafood production. Diversity within our food systems is vital as it makes it more resilient to disturbances, such as climate change or supply chain failures. 
+Seafood production in the United States is currently dominated by wild fisheries harvests. Marine aquaculture makes up a small portion of seafood production, however this method of production has been expanding over the past few decades with an approximately 70% increase in marine hectares farmed (Lester et al., 2024). By expanding marine aquaculture, this adds diversity to methods, geographic diversity, and species to seafood production. Diversity within our food systems is vital as it makes it more resilient to disturbances, such as climate change or supply chain failures.
 
-A first step to understanding where marine aquaculture can continue to expand and be implemented in the United States, is identifying where marine aquaculture farms can be located. Each coastal nation has an Exclusive Economic Zone (EEZ), which is an area of the ocean, generally extending 200 nautical miles (230 miles) beyond a nation’s territorial sea, within which a coastal nation has jurisdiction over both living and nonliving resources (NOAA, 2023). Meaning the country has special rights to explore, exploit, and manage marine resources. Therefore, suitable areas for marine aquaculture in the United States can be identified within these Exclusive Economic Zones. 
+A first step to understanding where marine aquaculture can continue to expand and be implemented in the United States, is identifying where marine aquaculture farms can be located. Each coastal nation has an Exclusive Economic Zone (EEZ), which is an area of the ocean, generally extending 200 nautical miles (230 miles) beyond a nation’s territorial sea, within which a coastal nation has jurisdiction over both living and nonliving resources (NOAA, 2023). Meaning the country has special rights to explore, exploit, and manage marine resources. Therefore, suitable areas for marine aquaculture in the United States can be identified within these Exclusive Economic Zones.
 
 By identifying spatial and environmental requirements for aquaculture farms and marine species, we can map the suitable areas where various species can be raised, within in the EEZs.
 
-#### **Analysis Question:** 
+#### **Analysis Question:**
 
 How can sea surface temperature and ocean depth rasters be used to determine what areas may be suitable to raise different marine aquaculture species?
 
@@ -162,7 +162,6 @@ reclassified_depth[is.na(reclassified_depth)] <- 0
 suitable_eez <- (reclassified_depth)*(reclassified_sst)
 ```
 
-
 ### Determine the most suitable EEZ
 
 The reclassification step resulted in a raster that identifies suitable areas with 0's and 1's, across a large portion of the West Coast and Pacific Ocean. However, since the United States only has rights to manage marine resources within it's designated Exclusive Economic Zones, we want to create a mask that limits the raster to the West Coast EEZ boundaries. We can then calculate the area, in square kilometers, that is suitable to raise oysters.
@@ -234,6 +233,7 @@ suitable_df <- west_coast %>%
   kable_styling(bootstrap_options = "striped")
 suitable_df
 ```
+
 This table identifies the exact area that is determined to be suitable for Oysters. Looking at our map it may appear that the Central and Southern California regions both have the same amount of area suitable for Oysters, but this table tells us that the prime zone would be the Central California.
 
 ```{r, message=FALSE}
@@ -247,9 +247,10 @@ tm_shape(west_coast) +
   tm_title(text = "Suitable Area of Oysters")
 ```
 
-This map compares the suitability of each region. Highlighting which regions have the highest area in km$^2$ that can support a given species, in this case we are looking at oysters. 
+This map compares the suitability of each region. Highlighting which regions have the highest area in km$^2$ that can support a given species, in this case we are looking at oysters.
 
 ### Identifying regions for other marine species
+
 To identify other suitable regions for other marine species, a function was created, where only parameters required are the depth and temperature ranges, and the species name we are interested in. This function will create a map of new species we are interested in. The map identifies the regions along the west coast that contains the largest suitable areas for the marine species.
 
 ```{r}
@@ -340,22 +341,23 @@ suitable_eez_fun(min_temp = 8,
                  max_depth = 0,
                  species_name = "Red Abalone")
 ```
+
 Using the function, a map comparing the suitable regions for Red Abalone was created and a table that identifies the exact amount of square kilometers that can support Red Abalone in each Exclusive Economic Zone. According to our map, the Washington region appears to have the largest suitable area for Red Abalone to be raised, in comparison to the other EEZ regions. From looking at the exact suitable area (km$^2$) within each EEZ region, the areas are fairly low, being within the 0-1000 square kilometers. This suggests that marine aquaculture farms raising Red Abalone would be restricted to the limited suitable areas. Therefore, it may be more economically feasible and efficient to consider raising other species that have a broader and larger suitable area, within each EEZ along the West Coast.
 
 ## Conclusions
 
-This analysis provides a foundation of understanding where future marine aquaculture expansion within each West Coast Exclusive Economic Zone for specific species is the most feasible. By identifying the suitable growing areas for marine species, we can determine what species may or may not efficiently contribute to seafood production. Determining the most suitable areas for marine aquaculture provides us with data-based evidence that guides make decision-making that promotes the diversification of marine aquaculture seafood production and supports sustainability within our food systems. For a more comprehensive analysis, other variable such as dissolved oxygen, salinity, marine protected areas, etc. could be incorporated to provide more refined suitable areas. 
+This analysis provides a foundation of understanding where future marine aquaculture expansion within each West Coast Exclusive Economic Zone for specific species is the most feasible. By identifying the suitable growing areas for marine species, we can determine what species may or may not efficiently contribute to seafood production. Determining the most suitable areas for marine aquaculture provides us with data-based evidence that guides make decision-making that promotes the diversification of marine aquaculture seafood production and supports sustainability within our food systems. For a more comprehensive analysis, other variable such as dissolved oxygen, salinity, marine protected areas, etc. could be incorporated to provide more refined suitable areas.
 
 #### References:
 
 Flanders Marine Institute (2025): MarineRegions.org. Available online at [www.marineregions.org](www.marineregions.org). Consulted on 2025-11-28.
 
-Gridded Bathymetry Data (2025). [depth.tif] General Bathymetric Chart of the Oceans. [https://www.gebco.net/data-products/gridded-bathymetry-data#toc-terms-of-use](https://www.gebco.net/data-products/gridded-bathymetry-data#toc-terms-of-use)
+Gridded Bathymetry Data (2025). \[depth.tif\] General Bathymetric Chart of the Oceans. <https://www.gebco.net/data-products/gridded-bathymetry-data#toc-terms-of-use>
 
-Lester, S. E., Gentry, R. R., & Froehlich, H. E. (2024). The role of marine aquaculture in contributing to the diversity and stability of U.S. seafood production. Marine Policy, 160, 105994. [https://doi.org/10.1016/j.marpol.2023.105994](https://doi.org/10.1016/j.marpol.2023.105994)
+Lester, S. E., Gentry, R. R., & Froehlich, H. E. (2024). The role of marine aquaculture in contributing to the diversity and stability of U.S. seafood production. Marine Policy, 160, 105994. <https://doi.org/10.1016/j.marpol.2023.105994>
 
-NOAA Coral Reef Watch. 2018, updated daily. NOAA Coral Reef Watch Version 3.1 Daily Global 5km Satellite Coral Bleaching Degree Heating Week Product, Jun. 3, 2013-Jun. 2, 2014. College Park, Maryland, USA: NOAA Coral Reef Watch. Data set accessed 2020-09-01 at [ftp://ftp.star.nesdis.noaa.gov/pub/sod/mecb/crw/data/5km/v3.1/nc/v1.0/daily/dhw/](ftp://ftp.star.nesdis.noaa.gov/pub/sod/mecb/crw/data/5km/v3.1/nc/v1.0/daily/dhw/).
+NOAA Coral Reef Watch. 2018, updated daily. NOAA Coral Reef Watch Version 3.1 Daily Global 5km Satellite Coral Bleaching Degree Heating Week Product, Jun. 3, 2013-Jun. 2, 2014. College Park, Maryland, USA: NOAA Coral Reef Watch. Data set accessed 2020-09-01 at <ftp://ftp.star.nesdis.noaa.gov/pub/sod/mecb/crw/data/5km/v3.1/nc/v1.0/daily/dhw/>.
 
 Palomares, M.L.D. and D. Pauly. Editors. 2025. SeaLifeBase. World Wide Web electronic publication. [www.sealifebase.org](www.sealifebase.org), version (04/2025).
 
-What is the “EEZ”? - NOAA Ocean Exploration. (2023a, January 6). NOAA Ocean Exploration. [https://oceanexplorer.noaa.gov/ocean-fact/useez/](https://oceanexplorer.noaa.gov/ocean-fact/useez/)
+What is the “EEZ”? - NOAA Ocean Exploration. (2023a, January 6). NOAA Ocean Exploration. <https://oceanexplorer.noaa.gov/ocean-fact/useez/>
