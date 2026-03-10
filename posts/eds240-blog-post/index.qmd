@@ -548,4 +548,6 @@ stacked_bar <- ggplot(data = type_country, aes(x = country, y = disastertype_cou
 
 # Data Citation
 
+Rosvold, E., & Buhaug, H. (2021). Geocoded Disasters (GDIS) Dataset (Version 1.00) [Data set]. Palisades, NY: NASA Socioeconomic Data and Applications Center (SEDAC). https://doi.org/10.7927/ZZ3B-8Y61 Date Accessed: 2026-02-19
+
 # Explore code
