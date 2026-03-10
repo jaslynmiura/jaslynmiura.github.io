@@ -104,7 +104,7 @@ Explore the different design elements I considered while crafting my infographic
 # Explore code
 
 ```{r, eval=FALSE}
-#| code-fold: true
+#| code-fold: TRUE
 #..............................Set Up.............................
 
 # Load necessary libraries.
