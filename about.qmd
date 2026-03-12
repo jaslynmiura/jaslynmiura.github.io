@@ -1,36 +1,57 @@
 ---
 title: "about"
+subtitle: "a little more about me"
+title-block-banner: true
 ---
 
-#### my roots
+#### **my roots**
 
-Growing up in Hawaiʻi, I was surrounded by a community and unique ecosystems that shaped my love for the environment. Learning about Hawaiian culture that is deeply intertwined with the land while also witnessing the effects of climate change on my home, inspired me to work in the environmental science field. I hope to return to Hawaiʻi to work alongside my community to apply traditional ecological knowledge and data science to advance sustainable development and conservation.
+Growing up in Hawaiʻi, I was surrounded by a community and unique ecosystems that shaped my love for the environment. I spent countless hours exploring the beach and different forests on the island of Hawaiʻi, where I've found so much peace in connecting with the land. Through hula, chants, moʻolelo, and tradition, I grew to deeply appreciate the relationship Hawaiian culture has long fostered with the land.
+
+My interest in environmental science began in my seventh grade science class when my science class explored how climate change is affecting Hawaiʻi by simulating sea level rise, studying the decline of native plants, and examining shifting weather patterns. These topics fascinated me as much as they have haunted me. That feeling deepened when I traveled with my school to Fairbanks, Alaska where we collaborated with Alaska Native students to discuss climate concerns and solutions. What I witnessed there was a completely different realm of climate impacts and it was clear to me that our *world* is changing, and it is changing fast. Though our experiences differed, I found that our communities both rely on and trust traditional ecological knowledge as a guide to sustainability and preservation. 
+
+This only deepened my curiosity—about the way the environment functions and more about the traditional knowledge my community holds. In pursuing my Bachelorʻs degree in Environmental Science and Resource Management I was given the foundation in understanding of the way the environment works and the effects of climate change. Through my Quantitative Science minor, I gained skills in statistics and model building that have given me the ability to make informed decisions based on data analysis. During my academic journey, I've gained insights into traditional ecological knowledge by participating in fish ponds restoration, working in the loʻi (traditional Hawaiian wetland kalo patch), collecting native plant seeds, and tending hala groves.
+
+From these experiences a teaching Iʻve inherited from both my community and the environment is to leave a place better than you found it. This goes beyond being conscious of my litter and environmental impact to caring for the land so that it is better for future generations. I believe that how we care for the land allows us to continue to pass down traditions and practices within our communities.
+
+The ʻōlelo noʻeau, ***I ka wā ma mua, ka wā ma hope***, The future is found in the past, is a Hawaiian proverb that I hold close to my heart. While this proverb reminds me to honor the past, it inspires me to continue to move forward. As an environmental data scientist I am driven to combine traditional ecological knowledge with technology and data-driven tools to develop innovative solutions to the environmental challenges we face today.
 
 ------------------------------------------------------------------------
 
-#### the journey
+#### **the journey**
 
 ::: panel-tabset
 ### education
 
 
-**Master's of Environmental Data Science** \| August 2025 - June 2026 (expected)
+**Master's of Environmental Data Science** \| *Expected June 2026*
 
 Bren School of Environmental Science & Management \| University of California, Santa Barbara \| Santa Barbara, CA
 
 --------------------------------------------------------------------------------
 
-**B.S. Environmental Science and Terrestrial Resource Management with a minor in Quantitative Science** \| (June 2025)
+**B.S. Environmental Science and Terrestrial Resource Management with a minor in Quantitative Science** \| *September 2021 - June 2025*
 
 University of Washington \| Seattle, WA
 
 ### projects
 
-**Disparate Data to Actionable Analysis: The Bio Weaver Tool**
+**Disparate Data to Actionable Analysis: The Bio Weaver Tool** \| *January 2026 - June 2026*
+
+MEDS Capstone Project \| Client: Rincon Consultants, Inc.
+
+•	Built a reproducible workflow that streamlines a fragmented and manual data processing method into an automated system.
+
+•	Designed dashboard that implements the streamlined workflow within a user friendly interface.
+
+•	Designed and presented several 15 minute talks to communicate product functionality to a diverse set of audiences
+
 
 ### research
 
-**Summer Undergraduate Research Fellow** - Pacific Island Ecosystem Research Center
+**Summer Undergraduate Research Fellow** \| *June 2024 - August 2024*
+
+Hawaiʻi SeaGrant \| Pacific Island Ecosystem Research Center \| Hawaiʻi Volcano National Park, HI
 
 •	Wrangled climate and spatial data by utilizing the tidyverse and sf packages in R to conduct a spatial analysis of the biomes in Hawaiʻi.
 
@@ -40,7 +61,9 @@ University of Washington \| Seattle, WA
 
 ### internships
 
-**Plant Macrofossil Photographer** - Strömberg Paleobotany Lab, University of Washington
+**Plant Macrofossil Photographer** \| *March 2024 - June 2024*
+
+Strömberg Paleobotany Lab \| University of Washington \| Seattle, WA
 
 •	Handled macrofossil specimens and operated museum camera equipment and software to produce high-quality photographs, to contribute to the study of understand plant ecology in the Pacific Northwest during the mid-Miocene climatic optimum.
 
@@ -48,7 +71,9 @@ University of Washington \| Seattle, WA
 
 --------------------------------------------------------------------------------
 
-**Data Analysis Intern** - Quantitative Ecology Lab, University of Washington
+**Data Analysis Intern** \| *October 2023 - June 2024*
+
+Quantitative Ecology Lab \| University of Washington \| Seattle, WA
 
 •	Managed and processed high-volume camera trap imagery sets by downloading, reviewing, and classifying species and human activity, to explore relationships between human activities and wildlife spatial and temporal patterns.
 
@@ -56,14 +81,13 @@ University of Washington \| Seattle, WA
 
 ------------------------------------------------------------------------
 
-#### more about me!
-
-
-**The meaning behind "Gigi"...** 
+#### **and more!**
+<br>
+***The meaning behind "Gigi"...***
 
 When I was born, my older sister who at the time was only a year old could not pronounce my name, Jaslyn. So she instead gave me the nickname "Gigi", which stuck beyond our childhood. Since then there has been even more other derivations of my names: "Gi", "Geeg", "Jaz" and even "Double G". Probably one of my greatest regrets is not making my GitHub username "gigiplot", a little joke other data scientist would (hopefully) get a kick out of.
 
-**The icon...**
+***The icon...***
 
 Cherry blossoms seem to follow me wherever I go. Back home in Waimea, these trees are scattered throughout town, and the brief window when they bloom is my favorite time of year. After moving away for college, homesickness hit hard — until the University of Washington's famous cherry trees finally blossomed, which felt like a reminder of Waimea. In Japanese culture, cherry blossom season is a time of reflection on life's fleeting nature. Now, wherever I encounter them, they serve as a reminder to stay grounded, present, and intentional — in the places I go, the people I meet, and the work I do.
 

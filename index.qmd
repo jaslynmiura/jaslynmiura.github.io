@@ -21,20 +21,21 @@ about:
 lightbox: true
 ---
 ::: {#about-block}
-#### **aloha!** 
+<h1>aloha!</h1>
 I am a student in the data science field, inspired by my Hawaiʻi community, where the relationship between the land and people fuels my passion to protect the environment I grew up with, using the intersection of technology and tradition.
 
-I'm interested in conservation, sustainable development, and traditional ecological knowledge. My hope is to eventually return back home to Hawaiʻi to give back to my community, but until then I want to explore different places far and wide to learning more about the environment!
+I'm interested in conservation, sustainable development, and learning more about traditional ecological knowledge within different communities. My hope is to eventually return back home to Hawaiʻi to give back to my home, but until then I want to explore different places far and wide to learn more about the environment!
 
 When Iʻm not being a Data Scientist, you can find me laying on the beach, trying new foods, cooking/baking, running, or watching the sunset. 
 
-**Explore my website to learn more about me and the things I do!** 
+<br>
+***Explore my website to learn more about me and the things I do!***
 ::: 
 
 ```{=html}
 <style>
 .about-entity::after {
-  content: "I ka w\0101  ma mua, ka w\0101 ma hope \A (The future is found in the past)";
+  content: "I ka w\0101  ma mua, ka w\0101  ma hope \A (The future is found in the past)";
   display: block;
   text-align: center;
   font-style: italic;
@@ -48,12 +49,12 @@ When Iʻm not being a Data Scientist, you can find me laying on the beach, tryin
 --------------------------------------------------------------------------------
 
 ::: {style="text-align: center;"}
-#### **the inspiration ♡ **
+#### the inspiration ♡ 
 ::: {style="width: 80%; margin: 0 auto;"}
 ::: panel-tabset
 
 ### waimea
-My home town! The place I will always go back to! Nestled on southern part of the Kohala mountain and made up of unique climates, Waimea is a unique place known as paniolo (cowboy) country. I love this image because it truly captures the beauty and meaning of Waimea.
+My home town! The place I will always go back to! Nestled on southern part of the Kohala mountain and made up of unique climates, Waimea is a special place known as paniolo (cowboy) country. I love this image because it truly captures the beauty and meaning of Waimea.
 ![](images/gallery/waimea.jpg){group="my-group"}
 
 ### puakō
