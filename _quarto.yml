@@ -4,18 +4,19 @@ project:
 
 website:
   title: "Jaslyn Miura"
-  #favicon: images/favicon.png
+  favicon: images/sakura2.png
   navbar:
     title: false
-    #logo: images/favicon.png
-    #logo-alt: a circle with three horizontal dashes through it
+    logo: images/sakura2.png
+    logo-alt: an drawing of an outline of a cherry blossom flower
     right:
       - href: index.qmd
-        text: Home
+        text: home
       - about.qmd
-      - posts.qmd
+      - href: posts.qmd
+        text: posts
       - href: resources.qmd
-        text: Resources
+        text: resources
       - icon: github
         href: https://github.com/jaslynmiura/jaslynmiura.github.io
   page-footer: 
@@ -32,4 +33,5 @@ format:
     mainfont: Raleway
 
 editor: visual
+
 

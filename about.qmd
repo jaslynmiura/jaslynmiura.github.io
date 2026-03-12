@@ -1,40 +1,71 @@
 ---
-title: "About"
+title: "about"
 ---
+
+#### my roots
 
 Growing up in Hawaiʻi, I was surrounded by a community and unique ecosystems that shaped my love for the environment. Learning about Hawaiian culture that is deeply intertwined with the land while also witnessing the effects of climate change on my home, inspired me to work in the environmental science field. I hope to return to Hawaiʻi to work alongside my community to apply traditional ecological knowledge and data science to advance sustainable development and conservation.
 
-### Education
-
 ------------------------------------------------------------------------
 
-**University of Washington** \| Seattle, WA
+#### the journey
 
-B.S. Environmental Science and Terrestrial Resource Management with a minor in Quantitative Science \| September 2021 - June 2025
+::: panel-tabset
+### education
 
-**University of California, Santa Barbara** \| Santa Barbara, CA
 
-Master's of Environmental Data Science \| August 2025 - June 2026 (expected)
+**Master's of Environmental Data Science** \| August 2025 - June 2026 (expected)
 
-### What I've Done
+Bren School of Environmental Science & Management \| University of California, Santa Barbara \| Santa Barbara, CA
 
----------------------------------------------------
+--------------------------------------------------------------------------------
+
+**B.S. Environmental Science and Terrestrial Resource Management with a minor in Quantitative Science** \| (June 2025)
+
+University of Washington \| Seattle, WA
+
+### projects
+
+**Disparate Data to Actionable Analysis: The Bio Weaver Tool**
+
+### research
 
 **Summer Undergraduate Research Fellow** - Pacific Island Ecosystem Research Center
 
 •	Wrangled climate and spatial data by utilizing the tidyverse and sf packages in R to conduct a spatial analysis of the biomes in Hawaiʻi.
+
 •	Created various maps and graphs to deliver a final presentation summarizing research findings to cohort peers and supervisors
+
 •	Supported various fieldwork projects involving seed collection and bird banding.
+
+### internships
 
 **Plant Macrofossil Photographer** - Strömberg Paleobotany Lab, University of Washington
 
 •	Handled macrofossil specimens and operated museum camera equipment and software to produce high-quality photographs, to contribute to the study of understand plant ecology in the Pacific Northwest during the mid-Miocene climatic optimum.
+
 •	Adhered to proper file organization and open-window museum workspace protocols.
+
+--------------------------------------------------------------------------------
 
 **Data Analysis Intern** - Quantitative Ecology Lab, University of Washington
 
 •	Managed and processed high-volume camera trap imagery sets by downloading, reviewing, and classifying species and human activity, to explore relationships between human activities and wildlife spatial and temporal patterns.
 
+:::
+
 ------------------------------------------------------------------------
+
+#### more about me!
+
+
+**The meaning behind "Gigi"...** 
+
+When I was born, my older sister who at the time was only a year old could not pronounce my name, Jaslyn. So she instead gave me the nickname "Gigi", which stuck beyond our childhood. Since then there has been even more other derivations of my names: "Gi", "Geeg", "Jaz" and even "Double G". Probably one of my greatest regrets is not making my GitHub username "gigiplot".
+
+**The icon...**
+
+Cherry blossoms seem to follow me wherever I go. Back home in Waimea, these trees are scattered throughout town, and the brief window when they bloom is my favorite time of year. After moving away for college, homesickness hit hard — until the University of Washington's famous cherry trees finally blossomed, which felt like a reminder of Waimea. In Japanese culture, cherry blossom season is a time of reflection on life's fleeting nature. Now, wherever I encounter them, they serve as a reminder to stay grounded, present, and intentional — in the places I go, the people I meet, and the work I do.
+
 
 

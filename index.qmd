@@ -1,10 +1,11 @@
 ---
-title: "Jaslyn Miura"
-# image: jaslyn_miura.jpg
+title: "jaslyn (gigi) miura"
+image: cover_photo.jpg
 about:
-  template: solana
- # image-shape: rounded
- # image-width: 10em
+  id: about-block
+  template: trestles
+  image-shape: round
+  # image-width: 8em
   links: 
     - text: LinkedIn
       icon: linkedin
@@ -19,37 +20,71 @@ about:
       href: mailto:jaslyntmiura@ucsb.edu
 lightbox: true
 ---
+::: {#about-block}
+#### **aloha!** 
+I am a student in the data science field, inspired by my Hawaiʻi community, where the relationship between the land and people fuels my passion to protect the environment I grew up with, using the intersection of technology and tradition.
 
-**Aloha!** I am a student in the data science field, inspired by my Hawaiʻi community, where the relationship between the land and people fuels my passion to protect the environment I grew up with, using the intersection of technology and tradition.
+I'm interested in conservation, sustainable development, and traditional ecological knowledge. My hope is to eventually return back home to Hawaiʻi to give back to my community, but until then I want to explore different places far and wide to learning more about the environment!
 
-When Iʻm not being a Data Scientist, you can find me trying new foods, cooking/baking, running, or watching the sunset. Check out my gallery of some of my favorite places and the work that Iʻve done!
+When Iʻm not being a Data Scientist, you can find me laying on the beach, trying new foods, cooking/baking, running, or watching the sunset. 
 
+**Explore my website to learn more about me and the things I do!** 
+::: 
 
+```{=html}
+<style>
+.about-entity::after {
+  content: "I ka w\0101  ma mua, ka w\0101 ma hope \A (The future is found in the past)";
+  display: block;
+  text-align: center;
+  font-style: italic;
+  margin-top: 1rem;
+  font-size: 0.9em;
+  color: gray;
+  white-space: pre;
+}
+</style>
+```
+--------------------------------------------------------------------------------
 
-::: {layout-ncol=3}
+::: {style="text-align: center;"}
+#### **the inspiration ♡ **
+::: {style="width: 80%; margin: 0 auto;"}
+::: panel-tabset
 
-![](images/gallery/puako.jpeg){group="my-group"}
+### waimea
+My home town! The place I will always go back to! Nestled on southern part of the Kohala mountain and made up of unique climates, Waimea is a unique place known as paniolo (cowboy) country. I love this image because it truly captures the beauty and meaning of Waimea.
+![](images/gallery/waimea.jpg){group="my-group"}
 
-![](images/gallery/mauumae.jpeg){group="my-group"}
+### puakō
+Growing up, I spent much time wading in the tide pools with my sister, while my dad dove for fish that we would later eat for dinner! I still love exploring the tide pools here, especially when the sea turtles are basking on the lava rocks.
+![](images/gallery/puako.jpg){group="my-group"}
 
-![](images/gallery/waimea.jpeg){group="my-group"}
+### mauʻumae
+Being a quick 20 minute cruise down the hill, Mauʻumae is my favorite beach on the island of Hawaiʻi.
+![](images/gallery/mauumae.jpg){group="my-group"}
 
-![](images/gallery/nuilii.jpeg){group="my-group"}
+### nuiliʻi
+I spent a day visiting Nuiliʻi in Kohala, an area of land under the care of [The Kohala Center](https://storymaps.arcgis.com/stories/157efdffecaa4271bf124e5dee227629). I was able to tend to the ulu hala (lau hala groves) of Nuiliʻi to contribute to the greater effort of replenishing lau hala in Kohala.
+![](images/gallery/nuilii.jpg){group="my-group"}
 
-![](images/gallery/burke.jpeg){group="my-group"}
+### ʻamakihi
+Me and a Hawaiʻi ʻAmakihi! One of my absolute favorite things to do is sitting in an ʻōhiʻa forest and listening to all the native Hawaiian forest bird sing. Since many of these beautiful little birds face many threats such as habitat loss and avian malaria, I feel incredibly lucky to have participated in several bird banding days to gain insights into the health of these populations.
 
-![](images/gallery/sb_sunset.jpeg){group="my-group"}
+![](images/gallery/field_work.jpg){group="my-group"}
 
-![](images/gallery/field_work.jpeg){group="my-group"}
+### burke
+During my junior year of undergrad, I spent sometime as a Plant Macrofossil Photographer for the Strömberg Paleobotany Lab at the Burke Museum of Natural History and Culture. The museum's glass-walled working labs allowed guests to see curators and scientist in action. While working under the watchful eyes of museum visitors, I was grateful to have the opportunity to show my community what research is like up close.
+![](images/gallery/burke.jpg){group="my-group"}
 
-![](images/gallery/kalo.jpeg){group="my-group"}
+### seattle
+I spent many field trips frolicking in the forests, where it was an escape from the chaos of the city.
 
-![](images/gallery/seattle.jpeg){group="my-group"}
+![](images/gallery/seattle.jpg){group="my-group"}
+
+### santa barbara
+Where I am now! A place that feels like home, from the sunny weather and beaches to a community that **LOVES** the outdoors.
+![](images/gallery/sb_sunset.jpg){group="my-group"}
 
 :::
-
-
-
-
-
 

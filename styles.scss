@@ -56,3 +56,24 @@ h1, h2 {
 .lavender-text {
   color: $lavender;
 }
+
+.panel-tabset {
+  clear: both;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.quarto-about-trestles {
+  margin-bottom: 2rem;
+}
+
+.quarto-about-trestles + * {
+  clear: both;
+}
+
+.gallery-section {
+  clear: both;
+  width: 100%;
+  margin-top: 2rem;
+}
+
