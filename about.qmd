@@ -61,7 +61,7 @@ University of Washington \| Seattle, WA
 
 **The meaning behind "Gigi"...** 
 
-When I was born, my older sister who at the time was only a year old could not pronounce my name, Jaslyn. So she instead gave me the nickname "Gigi", which stuck beyond our childhood. Since then there has been even more other derivations of my names: "Gi", "Geeg", "Jaz" and even "Double G". Probably one of my greatest regrets is not making my GitHub username "gigiplot".
+When I was born, my older sister who at the time was only a year old could not pronounce my name, Jaslyn. So she instead gave me the nickname "Gigi", which stuck beyond our childhood. Since then there has been even more other derivations of my names: "Gi", "Geeg", "Jaz" and even "Double G". Probably one of my greatest regrets is not making my GitHub username "gigiplot", a little joke other data scientist would (hopefully) get a kick out of.
 
 **The icon...**
 
