@@ -1,9 +1,10 @@
 ---
 title: "Global Natural Disasters"
 description: "Understanding global natural disasters through an infographic."
+author: Jaslyn Miura
 date: 2026-03-19
 categories: [MEDS, R]
-# image: images/moorea_reef.jpg
+image: images/storm.jpeg
 citation:
    url: https://jaslynmiura.github.io/posts/eds240-blog-post/
 # draft: true
@@ -15,42 +16,49 @@ citation:
 
 Natural disasters have major impacts on ecosystems and human populations around the world. Disaster events such as floods, storms, earthquakes, droughts, and extreme temperatures can damage ecosystems, destroy infrastructure, disrupt economies, and displace communities. However, the experience and impacts of disasters across different countries are disproportionate. While geographic location, climate, or environmental conditions can influence the disaster type, social and economic factors also shape the experience of disaster events and how communities are impacted. By examining how patterns of natural disasters types and occurrence impacts different communities we can then understand how these events are distributed globally and how they affect people in unequal ways.
 
-
 # Infographic
 
 Questions I wanted to answer with my infographic:
 
 **Main question**: How have the types and amount of natural disasters that have occurred around the world between 1960-2018 varied.
 
-**Sub-questions**: Which countries experience the most natural disasters per year around the world? What type natural disasters have occurred the most in different countries? What are the affects of natural disasters on the populations of different countries?
+**Sub-questions**: 
+
+- Which countries experience the most natural disasters per year around the world? 
+
+- What type natural disasters have occurred the most in different countries? 
+
+- What are the affects of natural disasters on the populations of different countries?
+
+<br>
 
 ![](images/info_hamburger.png)
 
 # The Initial Plots
 
-All initial plots were made in R using {ggplot}.
+All initial plots were made in R using `{ggplot}`.
 
 ## Total Natural Disaster Trend (1960-2018)
 
-My first plot depicts the trend of annual natural disasters. This is a simple plot that coneys the impactful messages that natural disasters have dramatically increased since 1980.
+My first plot depicts the trend of annual natural disasters. This is a simple plot that conveys the impactful messages that natural disasters have dramatically increased since 1980.
 
 ![](images/line_trend.png)
 
 ## Total Natural Disasters by Country
 
-Next, I wanted to determine which countries around the world have the highest total natural disasters. To help the audience identify key points, I also plotted the totals next to the bar charts. This makes it easier for the auidence to undestand the differences between the countries. By adding the flags to the bar chart, I think this helps the audience identify countries and adds some color to the chart.
+Next, I wanted to determine which countries around the world have the highest total natural disasters. To help the audience identify key points, I also plotted the totals next to the bar charts. This makes it easier for the audience to understand the differences between the countries. By adding the flags to the bar chart, I think this helps the audience identify countries and adds some color to the chart.
 
 ![](images/top10.png)
 
 ## Disaster Events by Population
 
-I then wanted to understand how the different population sizes of each country are affected by natural disasters. Here, I wanted to highlight the fact that smaller countries such as the Philippines experience much more disasters relative to population size. Since the Philippines experiences drastically more disasters relative to population size but is ranked second in the amount of natural disasters they experience, I wanted to highlight this difference. Because, we're again looking at the top ten countries, I wanted to keep the theme of the bar plots similar.
+I then wanted to understand how the different population sizes of each country are affected by natural disasters. Here, I wanted to highlight the fact that smaller countries such as the Philippines experience many more disasters relative to population size. Since the Philippines experiences drastically more disasters relative to population size but is ranked second in the amount of natural disasters they experience, I wanted to highlight this difference. Because, we're again looking at the top ten countries, I wanted to keep the theme of the bar plots similar.
 
 ![](images/pop_bar.png)
 
 ## Population Displaced from Disasters (2008-2018)
 
-I created this waffle chart to understand additional human impacts of natural disasters, specifically the amount of the population internally displaces due to natural disasters. This required taking the average yearly population size and average yearly displacement size. I also did some calculations so that a square would reflect "1,000 displaced people per million', which is a much more understandable scale for the audience to comprehend. To elevate these plots, I used affinity to shape the waffle grid as each country's border.
+I created this waffle chart to understand additional human impacts of natural disasters, specifically the amount of the population internally displaces due to natural disasters. This required taking the average yearly population size and average yearly displacement size. I also did some calculations so that each  square represents 1,000 displaced people per million, which provides a more interpretable scale. To elevate these plots, I used affinity to make each waffle grid the shape of a person.
 
 ![](images/waffle.png)
 
@@ -58,7 +66,7 @@ I created this waffle chart to understand additional human impacts of natural di
 
 Since the distribution of natural disasters are not uniform across the world, I wanted to visualize the proportion of disaster types for the top five countries. I again used affinity to shape each bar as the county's border. To highlight key points of the stacked bar chart, I also added the associated proportion values within each stack.
 
-![](images/stacked.png)
+![](images/stacked_bar.png)
 
 # Design Elements
 
@@ -96,10 +104,11 @@ Explore the different design elements I considered while crafting my infographic
 **Accessibility and DEI:** An aspect I took into consideration when creating my info graphic, was ensuring that color palette was color-blind friendly. A deliberate decision I made was to change the color defining `Extreme Temperature` from red to purple. Since `Extreme Temperature` within my stacked bar chart was plotted next to `Earthquakes` which is colored green, this aspect of my infographic was not colorblind friendly and had to be changed.
 :::
 
-# Explore code
+# Explore the Code
 
 ```{r, eval=FALSE}
 #| code-fold: TRUE
+#| code-summary: "Code!"
 #..............................Set Up.............................
 
 # Load necessary libraries.
@@ -120,6 +129,7 @@ library(countrycode)
 library(janitor)
 library(gghighlight)
 library(ARTofR)
+library(waffle)
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                                  Load Data                               ----
@@ -159,17 +169,20 @@ displaced <- read_csv(here::here("posts",
 #.................Select Fonts and Color Palette.................
 
 # Add special fonts
-font_add_google(name = "Sarala", family = "sarala")
-font_add_google(name = "Noto Sans", family = "noto-sans")
-font_add_google(name = "Red Hat Mono", family = "red")
+font_add_google(name = "Space Grotesk", family = "sans-serif") # axis details and numbers
+font_add_google(name = "Bricolage Grotesque", family = "bricolage") # titles, captions
+
+# Define infographic colors.
+"grey_blue" <- "#8896A7" # bar colors
+"pale_blue" <- "#A1BBDD" # text colors
+"dark_grey" <- "#4D4D4D" # plot background details
 
 # Create color palette for disaster type.
-pal <- c("drought" = "#9D836C",
-         "earthquake" = "#70815F",
-         "extreme temperature" = "#805D93",
-         "flood" = "#7B9EA8",
-         "storm" = "#F3DFA2")
-
+pal <- c("drought" = "#663317",
+         "earthquake" = "#0B4A32",
+         "extreme temperature" = "#783682",
+         "flood" = "#75B9B0",
+         "storm" = "#E89300")
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                  Total Natural Disaster Trend (1960-2018)                ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -185,46 +198,35 @@ yearly_total <- nat_dis %>%
 
 showtext.auto(enable = TRUE)
 
-# Create a line graph
+# Create a line graph.
 line_trend <- ggplot(data = yearly_total, aes(x = year, y = total_disasters)) +
-  # Add a vline to represent climate change
-  geom_vline(xintercept = 1980,
-             color = "firebrick",
-             alpha = 0.7) +
   geom_line() +
   geom_point(size = 0.4) +
   scale_x_continuous(limits = c(1960, 2018),
                      breaks = c(seq(1960, 2015, by = 20), 2018)) +
   scale_y_continuous(labels = scales::label_comma()) +
   labs(y = "Total Natural Disasters",
-       caption = "Data Source: NASA EarthData") +
-  theme_minimal() +
-  annotate("text",
-           x = 1980,
-           y = 1000,
-           label = "Global Warming\nAcceleration",
-           angle = 90,
-           vjust = -0.5,
-           family = "red",
-           size = rel(1.6),
-           color = "firebrick") +
+       ) +
+  theme_minimal(base_size = 17) +
+  # Theme adjustments.
   theme(
-    plot.caption = ggtext::element_markdown(family = "noto-sans",
-                                            face = "italic",
-                                            color = "grey50",
-                                            size = rel(0.3),
-                                            margin = margin(t = 3)),
-    axis.text = element_text(family = "red"),
-    axis.text.y = element_text(size = rel(0.7)),
-    axis.text.x = element_text(size = rel(0.8)),
+    axis.text = element_text(family = "sans-serif",
+                             color = pale_blue),
+    axis.text.y = element_text(size = rel(1.5), 
+                               color = pale_blue),
+    axis.text.x = element_text(size = rel(1.5),
+                               color = pale_blue),
     axis.title.x = element_blank(),
-    axis.title.y = element_text(family = "noto-sans",
-                                size = rel(0.5), 
+    axis.title.y = element_text(family = "bricolage",
+                                size = rel(1.8), 
                                 margin = margin(t = 15,
-                                                r = 12)),
+                                                r = 12),
+                                color = pale_blue),
     panel.grid.minor.x = element_blank(),
     panel.grid.minor.y = element_blank(),
     panel.grid.major.x = element_blank(),
+    panel.grid.major.y = element_line(linetype = "dashed", 
+                                      color = dark_grey),
     panel.background = element_rect(fill = "transparent", color = NA),
     plot.background  = element_rect(fill = "transparent", color = NA))
 
@@ -255,16 +257,16 @@ top10_df <- nat_dis %>%
 
 showtext.auto(enable = TRUE)
 
-# Create a bar chart
+# Create a bar chart.
 top10 <- ggplot(top10_df, aes(x = country_sum, y = country)) +
-  geom_col(fill = "#B8B8B8",
+  geom_col(fill = grey_blue,
            alpha = 0.5) +
   # Add the total value to the end of the bar.
   geom_text(aes(label = scales::comma(country_sum)),
             hjust = -0.4, 
-            color = "black",
-            size = rel(1),
-            family = "red") +
+            color = pale_blue,
+            size = 7,
+            family = "sans-serif") +
   # Add flag images to associated country.
   geom_image(aes(image = flag),
              x = max(top10_df$country_sum) * 0.03,
@@ -273,37 +275,21 @@ top10 <- ggplot(top10_df, aes(x = country_sum, y = country)) +
   # Expand the x-axis for for flag and total value placement.
   scale_x_continuous(labels = scales::label_comma(),
                      expand = expansion(mult = c(0, 0.1))) +
-  labs(title = "Countries with the Most Recorded Natural Disasters",
-       subtitle = "From 1960-2018, the United States and the Philippines recorded the highest total number of disasters.",
-       x = "Number of Natural Disasters",
-       y = "Country",
-       caption = "Data Source: NASA EarthData") +
-  theme_minimal() +
-  # Theme adjustments. 
+  labs(x = "Number of Natural Disasters",) +
+  theme_minimal(base_size = 17) +
+  # Theme adjustments.
   theme(
-    plot.title = ggtext::element_markdown(family = "sarala",
-                                          face = "bold",
-                                          size = rel(0.5),
-                                          margin = margin(b = rel(0.8))),
-    plot.subtitle = ggtext::element_markdown(family = "sarala",
-                                             size = rel(0.2),
-                                             margin = margin(b = rel(0.8))),
-    plot.caption = ggtext::element_markdown(family = "noto-sans",
-                                            face = "italic",
-                                            color = "grey50",
-                                            size = 1.5,
-                                            margin = margin(t = 0)),
-    axis.text = element_text(family = "red",
-                             size = rel(0.5)),
-    axis.text.y = element_text(size = rel(0.5),
-                               color = "black"),
-    axis.text.x = element_text(size = rel(0.5),
-                               color = "black"),
-    axis.title.x = element_text(family = "noto-sans",
-                                size = rel(0.2),
-                                color = "black"),
+    axis.text = element_text(family = "bricolage",
+                             size = rel(1.5),
+                             color = pale_blue),
+    axis.text.y = element_text(size = rel(1),
+                               color = pale_blue),
+    axis.text.x = element_blank(),
+    axis.title.x = element_text(family = "bricolage",
+                                size = rel(2.5),
+                                color = pale_blue),
     axis.title.y = element_blank(),
-    panel.grid = element_line(linewidth = 0.1),
+    panel.grid = element_blank(),
     panel.grid.major.y = element_blank(),
     panel.grid.minor.x = element_blank(),
     panel.background = element_rect(fill = "transparent", color = NA),
@@ -334,7 +320,7 @@ pop_avg_top10 <- pop_long %>%
   filter(country_name %in% top10_list) %>% 
   # Calculate the average population for each country.
   group_by(country_name) %>% 
-  summarise(avg_population = mean(population, na.rm = TRUE), .groups = "drop") %>% 
+  summarise(avg_population = mean(population, na.rm = TRUE), .groups = "drop")
 
 # Create `disaster_percap` dataframe.
 disaster_percap <- top10_df %>% 
@@ -352,56 +338,45 @@ disaster_percap <- top10_df %>%
 # Create a bar chart.
 pop_bar <- ggplot(disaster_percap, aes(x = dis_per_million, y = country)) +
   # Fill by the conditional statement to highlight the Philippines.
-  geom_col(aes(fill = country == "Philippines"), alpha = 0.9) +
+  geom_col(aes(fill = country == "Philippines"), alpha = 0.5) +
   # Add the total value to the end of the bar.
-  geom_text(aes(label = scales::comma(dis_per_million)),
-            hjust = -0.55,
-            color = "black",
-            size = rel(1),
-            family = "red") +
+  geom_text(
+    aes(label = scales::comma(dis_per_million)),
+    hjust = -0.85,
+    color = pale_blue,
+    size = 7,
+    family = "sans-serif") +
   # Add flag images to associated country.
-  geom_image(aes(image = flag), 
-             x = max(top10_percap$dis_per_million) * 0.035,
+  geom_image(aes(image = flag), x = max(disaster_percap$dis_per_million) * 0.03,
              size = 0.05,
              by = "width") +
   # Bars are colored by true/false statements with designated colors.
-  scale_fill_manual(values = c("TRUE" = "#000080", "FALSE" = "#B8B8B8"),
-                    guide = "none")  +
+  scale_fill_manual(
+    values = c("TRUE" = "#DFEDF6", "FALSE" = grey_blue),
+    guide = "none")  +
   # Expand the x-axis for for flag and total value placement.
   scale_x_continuous(labels = scales::label_comma(),
-                     expand = expansion(mult = c(0, 0.18))) +
-  labs(title = "Disaster Exposure per Million People",
-       subtitle = "When population is considered, smaller countries like the Philippines experience far more disasters relative to population size.",
-       x = "Number of Natural Disasters per Million People",
-       caption = "Data Source: NASA EarthData and World Bank Group") +
-  theme_minimal() +
+                   expand = expansion(mult = c(0, 0.18))) +
+  labs(x = "Number of Natural Disasters per Million People") +
+  theme_minimal(base_size = 17) +
   # Theme adjustments.
   theme(
-    plot.title = ggtext::element_markdown(family = "sarala",
-                                          face = "bold",
-                                          size = rel(0.5),
-                                          margin = margin(b = rel(0.8))),
-    plot.subtitle = ggtext::element_markdown(family = "sarala",
-                                             size = rel(0.2),
-                                             margin = margin(b = rel(0.8))),
-    plot.caption = ggtext::element_markdown(family = "noto-sans",
-                                            face = "italic",
-                                            color = "grey50",
-                                            size = 1.5,
-                                            margin = margin(t = 0)),
-    axis.text = element_text(family = "red",
-                             size = rel(0.5)),
-    axis.title.x = element_text(family = "noto-sans",
-                                size = rel(0.2)),
+    axis.text = element_text(family = "sans-serif",
+                             size = rel(1.5)),
+    axis.title.x = element_text(family = "bricolage",
+                                size = rel(2.3), 
+                                color = pale_blue),
     axis.title.y = element_blank(),
-    axis.text.x = element_text(size = rel(0.5)),
-    axis.text.y = element_text(size = rel(0.5),
-                               margin = margin(r = -0.5)),
-    panel.grid = element_line(linewidth = 0.1),
+    axis.text.x = element_blank(),
+    axis.text.y = element_text(size = rel(1),
+                               margin = margin(r = -0.5),
+                               family = "bricolage",
+                               color = pale_blue),
+    panel.grid = element_blank(),
     panel.grid.major.y = element_blank(),
+    legend.position = "none",
     panel.background = element_rect(fill = "transparent", color = NA),
-    plot.background  = element_rect(fill = "transparent", color = NA),
-    legend.position = "none")
+    plot.background  = element_rect(fill = "transparent", color = NA))
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##              Population Displaced from Disasters (2008-2018)             ----
@@ -451,10 +426,10 @@ displaced_pop <- displaced_top5 %>%
 
 #..........................Waffle Plot...........................
 
-# Create waffle chart
-waffle <- ggplot(waffle_long, aes(fill = group, values = n)) +
+# Create waffle chart.
+waffle <- ggplot(displaced_pop, aes(fill = group, values = n)) +
   geom_waffle(n_rows = 10,
-              size = 0.25,
+              size = 0.1,
               color = "white") +
   # Create a waffle chart for each country.
   facet_wrap(~ Entity, ncol = 5) +
@@ -462,39 +437,37 @@ waffle <- ggplot(waffle_long, aes(fill = group, values = n)) +
   scale_fill_manual(values = c("Displaced" = "navy",
                                "Not displaced" = "grey85")) +
   labs(
-    title = "Average Annual Disaster Displacement<br>Relative to Population",
     subtitle = "Each 10×10 waffle:\n1 square ≈ 1,000 displaced people per million",
     fill = NULL) +
   theme_minimal() +
   # Theme adjustments.
   theme(
-    plot.title = ggtext::element_markdown(family = "sarala",
-                                          face = "bold",
-                                          size = rel(0.8),
-                                          hjust = 0.5,
-                                          margin = margin(b = 0.5)),
-    plot.subtitle = ggtext::element_markdown(family = "sarala",
+    plot.subtitle = ggtext::element_markdown(family = "bricolage",
                                              lineheight = .5,
-                                             size = rel(0.3),
+                                             size = rel(1),
                                              margin = margin(b = 1),
                                              hjust = 0.5),
-    plot.margin = margin(t = 5, r = 3, b = 3, l = 5),
+    plot.margin = margin(t = 2, r = 2, b = 2, l = 2),
     panel.spacing = unit(0.1, "lines"),
     panel.grid = element_blank(),
     axis.text = element_blank(),
     axis.title = element_blank(),
     axis.ticks = element_blank(),
-    strip.text = element_text(family = "red",
-                              size = rel(0.4),
+    strip.text = element_text(family = "bricolage",
+                              size = rel(2),
                               margin = margin(b = .5,
                                               t = 1)),
-    legend.position = "none")
+    legend.position = "none",
+    panel.background = element_rect(fill = "transparent", color = NA),
+    plot.background  = element_rect(fill = "transparent", color = NA))
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##                 Proportion of Natural Disasters by Country               ----
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #.........................Summarize Data.........................
+# Create top 5 country list from referencing `top_10` bar plot.
+top5_countries <- c("United States", "Philippines", "India", "China", "Japan")
 
 # Create a `type_country` dataframe.
 type_country <- nat_dis %>% 
@@ -506,9 +479,9 @@ type_country <- nat_dis %>%
 
 #........................Stacked Bar Plot........................
 
-# Create a stacked bar chart
-stacked_bar <- ggplot(data = type_country, aes(x = country, y = disastertype_count, fill = disastertype)) +
-  geom_col(position = "fill", alpha = 0.7) +
+# Create a stacked bar chart.
+stacked_bar <- ggplot(data = type_country, aes(x = country, y = disastertype_count, fill = disastertype, color = "white")) +
+  geom_col(position = "fill", alpha = 0.65) +
   # Color disaster type by designated palette.
   scale_fill_manual(values = pal,
                     labels = c("drought" = "Drought",
@@ -516,6 +489,7 @@ stacked_bar <- ggplot(data = type_country, aes(x = country, y = disastertype_cou
                                "extreme temperature" = "Extreme\nTemperature",
                                "flood" = "Flood",
                                "storm" = "Storm")) +
+  scale_color_manual(values = "white")+
   # Make y-axis labels appear as percents.
   scale_y_continuous(labels = scales::label_percent(scale = 100)) +
   labs(x = "Country",
@@ -525,32 +499,31 @@ stacked_bar <- ggplot(data = type_country, aes(x = country, y = disastertype_cou
   theme_minimal() +
   # Theme adjustments.
   theme(
-    plot.title = ggtext::element_markdown(family = "sarala",
+    plot.title = ggtext::element_markdown(family = "bricolage",
                                           face = "bold",
                                           lineheight = 1.2),
-    axis.text = element_text(family = "red",
+    axis.text = element_text(family = "sans-serif",
                              size = rel(0.7)),
     axis.title.x = element_blank(),
-    axis.title.y = element_text(family = "noto-sans",
+    axis.title.y = element_text(family = "bricolage",
                                 size = rel(0.75), 
                                 margin = margin(t = 15)),
     legend.position = "bottom",
     legend.title.position = "bottom",
     legend.direction = "horizontal",
-    legend.text = element_text(family = "red",
+    legend.text = element_text(family = "bricolage",
                                 size = rel(0.75), 
                                 margin = margin(t = 2)),
     legend.title = element_blank(),
     legend.key.width = unit(0.5, "cm"),
-    legend.key.height = unit(0.5, "cm"))
-
+    legend.key.height = unit(0.5, "cm"),
+    panel.grid = element_blank())
 ```
 
 # Data Citation
 
-Internal Displacement Monitoring Centre (IDMC). Internally displaced persons, new displacement associated with disasters (number of cases) [WB_WDI]. World Bank Group: World Development Indicators. [https://data.worldbank.org/indicator/VC.IDP.NWDS](https://data.worldbank.org/indicator/VC.IDP.NWDS) Date Accessed: 2026-02-25
+Internal Displacement Monitoring Centre (IDMC). Internally displaced persons, new displacement associated with disasters (number of cases) \[WB_WDI\]. World Bank Group: World Development Indicators. <https://data.worldbank.org/indicator/VC.IDP.NWDS> Date Accessed: 2026-02-25
 
-Rosvold, E., & Buhaug, H. (2021). Geocoded Disasters (GDIS) Dataset (Version 1.00) [Data set]. Palisades, NY: NASA Socioeconomic Data and Applications Center (SEDAC). [https://doi.org/10.7927/ZZ3B-8Y61](https://doi.org/10.7927/ZZ3B-8Y61) Date Accessed: 2026-02-19
+Rosvold, E., & Buhaug, H. (2021). Geocoded Disasters (GDIS) Dataset (Version 1.00) \[Data set\]. Palisades, NY: NASA Socioeconomic Data and Applications Center (SEDAC). <https://doi.org/10.7927/ZZ3B-8Y61> Date Accessed: 2026-02-19
 
-World Population Prospects, United Nations (UN), et. al. Population, total [WB_WDI]. World Bank Group: World Development Indicators. [https://data.worldbank.org/indicator/SP.POP.TOTL](https://data.worldbank.org/indicator/SP.POP.TOTL) Date Accessed: 2026-02-25
-
+World Population Prospects, United Nations (UN), et. al. Population, total \[WB_WDI\]. World Bank Group: World Development Indicators. <https://data.worldbank.org/indicator/SP.POP.TOTL> Date Accessed: 2026-02-25

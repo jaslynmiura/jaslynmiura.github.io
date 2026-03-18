@@ -2,7 +2,7 @@
 title: "Grazing Patterns of Herbivorous Fish in Moʻorea"
 description: "Statistical Analysis of bite rates on coral reefs in Moʻorea"
 date: 2025-12-11
-categories: [MEDS, R]
+categories: [MEDS, R, STATISTICS]
 format: html
 image: images/moorea_reef.jpg
 citation:

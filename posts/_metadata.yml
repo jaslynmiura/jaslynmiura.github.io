@@ -1,7 +1,7 @@
 # any options specified here will apply to all posts in the posts/ folder
 
 author: 
-  - name: "Jaslyn Miura"
+    name: "Jaslyn Miura"
     url: https://jaslynmiura.github.io/
     affiliation: The Bren School of Environmental Science & Mangement, Environmental Data Science
     affiliation-url: https://bren.ucsb.edu/
