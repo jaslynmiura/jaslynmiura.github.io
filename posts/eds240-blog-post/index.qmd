@@ -91,7 +91,7 @@ Explore the different design elements I considered while crafting my infographic
 
 ## Typography
 
-**Typography:** I chose to use Noto Serif Myanmar for the titles and headers within my infographic. I used Red Hat Mono for all other text within my infographic, such as axis labels, supporting text, etc. I decided to use these two fonts because they have an academic feel.
+**Typography:** I chose to use Bricolage Grotesque for the titles, headers, captions, etc. within my infographic. I used Space Grotesk for all numeric text. I decided to use these two fonts because they have an academic feel. To highlight different captions or titles, I used different faces of text, such as regular, medium, bold, and extra bold.
 
 ## General Design
 
