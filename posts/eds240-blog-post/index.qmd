@@ -70,8 +70,6 @@ Since the distribution of natural disasters are not uniform across the world, I 
 
 # Design Elements
 
-### Design Elements
-
 Explore the different design elements I considered while crafting my infographic.
 
 ::: panel-tabset
