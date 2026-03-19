@@ -225,17 +225,17 @@ The causal identification approach used in the study is Difference in Difference
 Specification Strategy Breakdown:
 
 $$a_i(Y_i(t=x) - Y_i(t=0)) = a_i(\alpha + \tau T_i + \beta X_i)$$
-$$a_i$$: Square root of matching weight for each observation.
+$a_i$: Square root of matching weight for each observation.
 
-$$Y_i(t=x) - Y_i(t=0)$$: Change in forest cover from baseline to post-treatment.
+$Y_i(t=x) - Y_i(t=0)$: Change in forest cover from baseline to post-treatment.
 
-$$\alpha$$: Regression intercept.
+$\alpha$: Regression intercept.
 
-$$\tau$$: The treatment effect, impact of PSUR.
+$\tau$: The treatment effect, impact of PSUR.
 
-$$\T_i$$: Treatment indicator, (1 = title, 0 = no title).
+$\T_i$: Treatment indicator, (1 = title, 0 = no title).
 
-$$\beta X_1$$: Vector of control variable for regression adjustment.
+$\beta X_1$: Vector of control variable for regression adjustment.
 
 In simple terms...
 
