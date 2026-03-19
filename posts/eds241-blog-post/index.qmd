@@ -529,33 +529,33 @@ m3.PML5 <- lm(fl_yr5 ~ PML +
 # Year by year effects of PML.
 year <- seq(1:5)
 
-m1.coef <- c(m1.PML1$coef[2], 
+m1.PML.coef <- c(m1.PML1$coef[2], 
              m1.PML2$coef[2], 
              m1.PML3$coef[2], 
              m1.PML4$coef[2], 
              m1.PML5$coef[2])
-m1.se <- c(coef(summary(m1.PML1))[2,2], 
+m1.PML.se <- c(coef(summary(m1.PML1))[2,2], 
            coef(summary(m1.PML2))[2,2], 
            coef(summary(m1.PML3))[2,2], 
            coef(summary(m1.PML4))[2,2], 
            coef(summary(m1.PML5))[2,2])
-m1.p <- c(coef(summary(m1.PML1))[2,4],
+m1.PML.p <- c(coef(summary(m1.PML1))[2,4],
           coef(summary(m1.PML2))[2,4],
           coef(summary(m1.PML3))[2,4],
           coef(summary(m1.PML4))[2,4],
           coef(summary(m1.PML5))[2,4])
 
-m3.coef <- c(m3.PML1$coef[2], 
+m3.PML.coef <- c(m3.PML1$coef[2], 
              m3.PML2$coef[2], 
              m3.PML3$coef[2], 
              m3.PML4$coef[2], 
              m3.PML5$coef[2])
-m3.se <- c(coef(summary(m3.PML1))[2,2], 
+m3.PML.se <- c(coef(summary(m3.PML1))[2,2], 
            coef(summary(m3.PML2))[2,2], 
            coef(summary(m3.PML3))[2,2], 
            coef(summary(m3.PML4))[2,2], 
            coef(summary(m3.PML5))[2,2])
-m3.p <- c(coef(summary(m3.PML1))[2,4],
+m3.PML.p <- c(coef(summary(m3.PML1))[2,4],
           coef(summary(m3.PML2))[2,4],
           coef(summary(m3.PML3))[2,4],
           coef(summary(m3.PML4))[2,4],
@@ -563,16 +563,15 @@ m3.p <- c(coef(summary(m3.PML1))[2,4],
 ```
 
 ```{r}
-library(gt)
 
 data.frame(
   Year = 1:5,
-  Model1_Coef = round(m1.coef, 2),
-  Model1_SE = round(m1.se, 2),
-  Model1_P = round(m1.p, 3),
-  Model3_Coef = round(m3.coef, 2),
-  Model3_SE = round(m3.se, 2),
-  Model3_P = round(m3.p, 3)
+  Model1_Coef = round(m1.PML.coef, 2),
+  Model1_SE = round(m1.PML.se, 2),
+  Model1_P = round(m1.PML.p, 3),
+  Model3_Coef = round(m3.PML.coef, 2),
+  Model3_SE = round(m3.PML.se, 2),
+  Model3_P = round(m3.PML.p, 3)
 ) %>%
   gt() %>%
   cols_label(
@@ -586,7 +585,7 @@ data.frame(
   ) %>%
   tab_spanner(label = "Model 1: Covariates, No Matching", columns = c(Model1_Coef, Model1_SE, Model1_P)) %>%
   tab_spanner(label = "Model 2: Covariates, Pre-Matching", columns = c(Model3_Coef, Model3_SE, Model3_P)) %>%
-  tab_header(title = "Annual Treatment Effects of PMI on Deforestation (m² per km²)") %>%
+  tab_header(title = "Annual Treatment Effects of PML on Deforestation (m² per km²)") %>%
   fmt_number(columns = c(Model1_Coef, Model1_SE, Model3_Coef, Model3_SE), decimals = 2) %>%
   fmt_number(columns = c(Model1_P, Model3_P), decimals = 3)
 ```
