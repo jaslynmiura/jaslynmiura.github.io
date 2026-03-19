@@ -596,8 +596,8 @@ data.frame(
 # Graphing Figure 5 with our results.
 df_5 <- data.frame(
   year = rep(year, 2),
-  coef = c(m1.coef, m3.coef),
-  se   = c(m1.se,   m3.se),
+  coef = c(m1.PML.coef, m3.PML.coef),
+  se   = c(m1.PML.se,   m3.PML.se),
   model = factor(rep(c("Model 1", "Model 3"),
                      each = length(year)))) %>%
   mutate(ymin = coef - 2 * se,
