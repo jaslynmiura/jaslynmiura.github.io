@@ -855,29 +855,43 @@ ggplot(df_7, aes(x = year, y = coef)) +
 
 **Causal identification**:
 
-The identification strategy of this study is credible but has some serious limitations, which the authors largely acknowledge. Several assumptions must hold in order for the estimates to be causal. 
+The identification strategy, which uses matching and difference-in-differences to estimate the impact of land titling programs on deforestation, is reasonably credible, but it has some important limitations that the authors largely acknowledge. Several assumptions must be upheld for the estimates to be considered causal. Because some of these assumptions are difficult to fully satisfy, the results may not be broadly generalizable, but they can still be considered causal for contexts that closely resemble the conditions of this study.
 
-First, there shouldn’t be unobserved variables simultaneously affecting which grid cells get assigned to the treatment group and forest cover. Failing to account  for these kinds of variables could compromise accuracy of the genetic matching conducted in this study. It would mean the control and treatment groups would only be balanced on observed variables and exclude this confounding variable. 
+First, there should not be unobserved variables that simultaneously affect which grid cells receive treatment and forest cover outcomes. If such variables exist, they would undermine the genetic matching approach, since matching would only balance observed covariates while leaving hidden confounding unaddressed.
 
-Second, the parallel trends assumptions must be true. This means that in the absence of treatment (the implementation of the land titling program) treated and controlled grid cells would have the same trend in forest cover over time. 
+Second, the parallel trends assumption must be upheld. Treatment and control groups should have followed similar deforestation trends before the implementation of the land titling program. If this assumption is violated, the difference-in-differences estimates may capture pre-existing trends rather than the causal effect of the program.
 
-Lastly, there should not be spillover effects between control and treatment grid cells. The impacts of the land titling program on the treatment group should not impact deforestation in the control group. 
+Third, the stable unit treatment value assumption (SUTVA) must not be violated. In other words, there should be no spillover effects between treated and control grid cells. The impact of land titling in treated areas should not influence deforestation outcomes in control areas. If spillovers are present, they need to be measured and accounted for.
+
+Additionally, the matching strategy must be appropriate for the covariates used. This means the selected variables must adequately capture the main sources of confounding, and the matching procedure must achieve a good balance between treated and control groups.
+
+For the null result to be interpretable as “land titling does not reduce deforestation,” the study’s time range must also be appropriate. A five-year window must be enough time to capture the program’s effects. If the impact of land titling occurs with a longer time lag, the study may underestimate its true effect.
+
+Finally, there should be no contamination from other interventions or external factors. For example, if some communities also receive financial incentives or are subject to other policies that affect deforestation, the estimated effect would no longer isolate the impact of land titling alone.
+
 
 **Statistical assumptions**:
 
-Several key assumptions are defended in this study, some of which are better defended than others. 
-The authors try to defend the parallel trends assumption, but it is probably their weakest assumption. They only use one year of pre-treatment data, meaning there isn't a lot of evidence that the treated and controlled grid cells were following the same deforestation rates before the land titling program. They use a pre-treatment deforestation covariate for the genetic matching process in order to ensure treated and control grid cells had similar deforestation rates before the program. This is a great way to strengthen the parallel trends assumption, but it cannot replace the robustness of using more pre-treatment data.
+Several key statistical assumptions are discussed and defended in this study, although some are much better supported than others.
 
-The authors also assume there aren't any unobserved confounding variables simultaneously affecting which groups got treated and forest deforestation. I believe the authors did a great job of matching on observables such as pre-treatment forest loss, distance to roads, slope, etc. However, an unobservable that should probably be accounted for is quality of governance for the community. Communities had to have a functioning governance system in order for them to be selected into the land titling program in the first place and quality governance is also needed to effectively manage deforestation rates. This means this unobserved variable is a potential confound for the study. While I think this study would be stronger if they accounted for this unobserved variable, I do think they accounted for most of the strongest observables and I find the matching strategy convincing. 
+The authors attempt to defend the parallel trends assumption, but it is probably the weakest part of their identification strategy. The parallel trends assumption requires that the treated and control groups would have followed similar deforestation trends in the absence of the land titling program. To convincingly support this, you typically need multiple years of pre-treatment data. However, the authors only use one year of pre-treatment data, which limits their ability to show that these trends were actually parallel before the intervention.
 
-Lastly, the spillover effect is mentioned by the authors but not measured. The authors acknowledge it is possible that colonists displaced from the titled area may move into adjacent untitled areas and cause deforestation there. This could make the impact of the land titling program artificially large. The authors should have used blank to test for this spill over effect and measure its impact on deforestation. 
+They do try to strengthen this by including a pre-treatment deforestation covariate in the genetic matching process, ensuring that treated and control grid cells had similar deforestation levels before the program. This definitely helps, but it does not fully replace the need for multiple years of pre-treatment trends. Overall, I don’t find the evidence for parallel trends completely convincing.
+
+Another important assumption is the independence of observations. This is likely violated in this study due to spatial autocorrelation, since nearby grid cells are more likely to experience similar deforestation rates. If this is not properly accounted for, it could bias standard errors and make the results seem more precise than they actually are.
+
+Also, there is concern about contamination from overlapping programs. The presence of Socio Bosque payments introduces another factor that could influence deforestation. If some treated areas are also receiving these payments, it becomes difficult to separate the effect of land titling from the effect of financial incentives. This weakens the ability to interpret the estimated effect as being driven solely by the land titling program.
+
+There are also standard regression assumptions that are less explicitly discussed but still relevant. For example, the model assumes a linear (and additive) relationship between the land titling program and deforestation outcomes. If the true relationship is nonlinear or involves interaction effects, the estimates may be inaccurate.
+
 
 
 **Sampling & external validity**:
 
-Communal and Indigenous areas in the heavily forested province of Morona-Santiago, Ecuador are included in this study. The treated satellite grid cells in this study come from land within the 52 communities that received title through the land titling program. 
+Communal and Indigenous areas in the heavily forested province of Morona-Santiago, Ecuador, are included in this study. The treated satellite grid cells in this study come from land within the 52 communities that received title through the land titling program. 
 
-The results can be generalized to Indigenous communities in remote and heavily forested regions of Latin America that face colonization pressure, have limited commercial agriculture opportunities, and receive compensation through conservation programs. Also, these results are specific to collective land titles, deforestation under an individual private title might behave differently. Lastly, this study consisted of 5 years of observations so its results could only apply to programs that have a similar short run. We cannot extrapolate the results to long-term land titling programs. 
+The results can be generalized to Indigenous communities in remote and heavily forested regions of Latin America that face colonization pressure, have limited commercial agriculture opportunities, and receive compensation through conservation programs. Also, these results are specific to collective land titles; deforestation under an individual private title might behave differently. Furthermore, these results can only be applied to communities with similar quality of governance structures and institutions. Lastly, this study consisted of 5 years of observations, so its results could only apply to programs that have a similar short run. We cannot extrapolate the results to long-term land titling programs. 
+ 
 
 
 **Measurement**:
@@ -889,9 +903,14 @@ The authors used spatial data to determine the boundaries of communities that we
 
 **Other limitations**:
 
-There might be some precision concerns with this study for not including a covariate for rainfall and cloud cover when matching treatment and control grid cells. Rainfall and cloud cover directly impact forest cover and not accounting for them in this study increases standard errors. 
-  
-Also, this study only reported the treated cell group mean, the pre-matching control cell group mean, and post-matching control cell group mean after conducting genetic matching. Visually, it seems that the post-matching control cell group mean got much closer to the pre-matching control cell group mean (Buntaine et al., 2015, Table B1). This matching would be more credible, however, if the standard mean difference (SMD) was reported before and after matching so we can account for variation when assessing balance between treatment and control groups. 
+There might be some precision concerns with this study for not including a covariate for rainfall and cloud cover when matching treatment and control grid cells. Rainfall and cloud cover directly impact forest cover, and not accounting for them in this study increases standard errors. 
+
+Also, this study only reported the treated cell group mean, the pre-matching control cell group mean, and the post-matching control cell group mean after conducting genetic matching. Visually, it seems that the post-matching control cell group mean got much closer to the pre-matching control cell group mean (Buntaine et al., 2015, Table B1). This matching would be more credible, however, if the standard mean difference (SMD) was reported before and after matching, so we can account for variation when assessing balance between treatment and control groups. 
+	
+The authors also assume there aren't any unobserved confounding variables simultaneously affecting which groups got treated and forest deforestation. The authors did a great job of matching on observables such as pre-treatment forest loss, distance to roads, slope, etc. However, an unobservable that should probably be accounted for is the quality of governance for the community. Communities had to have a functioning governance system in order for them to be selected into the land titling program in the first place, and quality governance is also needed to effectively manage deforestation rates. This means this unobserved variable is a potential confound for the study. While this study would be stronger if they accounted for this unobserved variable, it did account for most of the strongest observables, and the matching strategy is mostly convincing. 
+
+Lastly, the stable unit treatment value assumption is violated due to the spillover effect in this study. The authors acknowledge it is possible that colonists displaced from the titled area may move into adjacent untitled areas and cause deforestation there. This could make the impact of the land titling program artificially large. The opposite is also possible; land titling of adjacent land could discourage people from deforesting non-titled areas near titled land. Therefore, making the difference between titled and non-titled land artificially small. 
+
 
 
 #### References
