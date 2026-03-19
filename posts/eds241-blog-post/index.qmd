@@ -233,7 +233,7 @@ $\alpha$: Regression intercept.
 
 $\tau$: The treatment effect, impact of PSUR.
 
-$\T_i$: Treatment indicator, (1 = title, 0 = no title).
+$T_i$: Treatment indicator, (1 = title, 0 = no title).
 
 $\beta X_1$: Vector of control variable for regression adjustment.
 
