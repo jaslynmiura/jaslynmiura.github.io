@@ -222,6 +222,27 @@ Outcome variables were `PML` (Plan de Manejo para Legalización) and `PMI` (Plan
 
 The causal identification approach used in the study is Difference in Difference. Authors conducted a Difference in Difference analysis by determining the difference between the treatment and control plots using ordinary least squares regression.
 
+Specification Strategy Breakdown:
+
+$$a_i(Y_i(t=x) - Y_i(t=0)) = a_i(\alpha + \tau T_i + \beta X_i)$$
+$$a_i$$: Square root of matching weight for each observation.
+
+$$Y_i(t=x) - Y_i(t=0)$$: Change in forest cover from baseline to post-treatment.
+
+$$\alpha$$: Regression intercept.
+
+$$\tau$$: The treatment effect, impact of PSUR.
+
+$$\T_i$$: Treatment indicator, (1 = title, 0 = no title).
+
+$$\beta X_1$$: Vector of control variable for regression adjustment.
+
+In simple terms...
+
+(PML/PMI **post** - PML/PMI **pre**) - (Untitled **post** - Untitled **pre**)
+
+Overall difference answers our question, does intervention have a causal effect on deforestation.
+
 
 ### Matching
 
