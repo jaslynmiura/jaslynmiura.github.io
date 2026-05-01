@@ -1,6 +1,6 @@
 ---
 title: "jaslyn (gigi) miura"
-image: cover_photo.jpg
+image: images/cover_photo.jpg
 about:
   id: about-block
   template: trestles
