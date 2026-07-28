@@ -20,3 +20,6 @@ posts/eds240-blog-post/data
 
 # Ignore the data in the EDS 241 folder
 posts/eds241-blog-post/data
+
+# Ignore the videos in the meds-capstone-post
+posts/meds-capstone-post/images/videos
