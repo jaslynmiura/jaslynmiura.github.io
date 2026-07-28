@@ -1,6 +1,6 @@
 ---
-title: "posts"
-subtitle: "my data science work!"
+title: "POSTS"
+subtitle: "My data science work!"
 title-block-banner: true
 listing: 
   contents: posts

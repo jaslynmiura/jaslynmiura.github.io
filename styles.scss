@@ -3,9 +3,22 @@
 // import google fonts
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Anaheim&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Vend+Sans:wght@400;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300..700&display=swap');
+
+
 // fonts
 $raleway: "Raleway", sans-serif;
 $bodoni: "Bodoni Moda", serif;
+$nanum: "Nanum Gothic Coding", monospace;
+$zen: "Zen Kaku Gothic Antique", sans-serif;
+$anaheim: "Anaheim", sans-serif;
+$vend: "Vend Sans", sans-serif;
+$manrope: "Manrope", sans-serif;
+$commissioner: "Commissioner", sans-serif;
 
 // colors
 $darkbrown: #33261D; 
@@ -15,24 +28,29 @@ $lavender: #816E94;
 $green: #234326; 
 $eggshell: #F3F0E3; 
 $cream: #FAF7F3;
-$white: #F3F4EF;
+$white: white;
 $duskblue: #485696;
+$black: #000000;
 
 
 // define quarto variables
 $body-bg: $white;
 $navbar-bg: $navyblue;
-$navbar-fg: $cream;
+$navbar-fg: $white;
 $footer-bg: $navyblue;
 $navbar-hl: $white;
 $link-color: $duskblue;
-$body-color: $darkbrown;
+$body-color: $black;
 
 /*-- scss:rules --*/
 
 
 h1, h2 {
-  font-family: $raleway;
+  font-family: $manrope;
+}
+
+body {
+  font-family: $manrope;
 }
 
 .navbar-brand img { 
@@ -46,7 +64,7 @@ h1, h2 {
 }
 
 .title {
-  color: $navyblue;
+  color: $black;
 }
 
 .center-text {

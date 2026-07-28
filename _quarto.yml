@@ -11,12 +11,12 @@ website:
     logo-alt: an drawing of an outline of a cherry blossom flower
     right:
       - href: index.qmd
-        text: home
+        text: HOME
       - about.qmd
       - href: posts.qmd
-        text: posts
+        text: POSTS
       - href: resources.qmd
-        text: resources
+        text: RESOURCES
       - icon: github
         href: https://github.com/jaslynmiura/jaslynmiura.github.io
   page-footer: 

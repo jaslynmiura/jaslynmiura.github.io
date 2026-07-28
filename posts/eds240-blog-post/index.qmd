@@ -7,8 +7,8 @@ categories: [MEDS, R]
 image: images/storm.jpeg
 citation:
    url: https://jaslynmiura.github.io/posts/eds240-blog-post/
-# draft: true
-# draft-mode: linked # hides the post on the listing page, the url exists just hides it from main website.
+draft: true
+draft-mode: linked # hides the post on the listing page, the url exists just hides it from main website.
 # bibliography: references.bib
 ---
 
@@ -22,13 +22,13 @@ Questions I wanted to answer with my infographic:
 
 **Main question**: How have the types and amount of natural disasters that have occurred around the world between 1960-2018 varied.
 
-**Sub-questions**: 
+**Sub-questions**:
 
-- Which countries experience the most natural disasters per year around the world? 
+-   Which countries experience the most natural disasters per year around the world?
 
-- What type natural disasters have occurred the most in different countries? 
+-   What type natural disasters have occurred the most in different countries?
 
-- What are the affects of natural disasters on the populations of different countries?
+-   What are the affects of natural disasters on the populations of different countries?
 
 <br>
 
@@ -58,7 +58,7 @@ I then wanted to understand how the different population sizes of each country a
 
 ## Population Displaced from Disasters (2008-2018)
 
-I created this waffle chart to understand additional human impacts of natural disasters, specifically the amount of the population internally displaces due to natural disasters. This required taking the average yearly population size and average yearly displacement size. I also did some calculations so that each  square represents 1,000 displaced people per million, which provides a more interpretable scale. To elevate these plots, I used affinity to make each waffle grid the shape of a person.
+I created this waffle chart to understand additional human impacts of natural disasters, specifically the amount of the population internally displaces due to natural disasters. This required taking the average yearly population size and average yearly displacement size. I also did some calculations so that each square represents 1,000 displaced people per million, which provides a more interpretable scale. To elevate these plots, I used affinity to make each waffle grid the shape of a person.
 
 ![](images/waffle.png)
 

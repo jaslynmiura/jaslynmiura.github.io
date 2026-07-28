@@ -1,5 +1,5 @@
 ---
-title: "jaslyn (gigi) miura"
+title: "JASLYN (GIGI) MIURA"
 image: images/cover_photo.jpg
 about:
   id: about-block
@@ -21,15 +21,13 @@ about:
 lightbox: true
 ---
 ::: {#about-block}
-<h1>aloha!</h1>
-I am a student in the data science field, inspired by my Hawaiʻi community, where the relationship between the land and people fuels my passion to protect the environment I grew up with, using the intersection of technology and tradition.
+<h1>ALOHA!</h1>
+I am a data scientist, inspired by my Hawaiʻi community, where the relationship between the land and people fuels my passion to protect the environment, using the intersection of technology and tradition.
 
 I'm interested in conservation, sustainable development, and learning more about traditional ecological knowledge within different communities. My hope is to eventually return back home to Hawaiʻi to give back to my home, but until then I want to explore different places far and wide to learn more about the environment!
 
-When Iʻm not being a Data Scientist, you can find me laying on the beach, trying new foods, cooking/baking, running, or watching the sunset. 
-
 <br>
-***Explore my website to learn more about me and the things I do!***
+**Explore my website to learn more about me and the things I do!**
 ::: 
 
 ```{=html}
@@ -46,46 +44,49 @@ When Iʻm not being a Data Scientist, you can find me laying on the beach, tryin
 }
 </style>
 ```
+
+
+------------------------------------------------------------------------
+
+::: panel-tabset
+### EDUCATION
+
+
+**Master's of Environmental Data Science** \| (2026)
+
+Bren School of Environmental Science & Management \| University of California, Santa Barbara \| Santa Barbara, CA
+
 --------------------------------------------------------------------------------
 
-::: {style="text-align: center;"}
-#### the inspiration ♡ 
-::: {style="width: 80%; margin: 0 auto;"}
-::: panel-tabset
+**B.S. Environmental Science and Terrestrial Resource Management with a minor in Quantitative Science** \| (2025)
 
-### waimea
-My home town! The place I will always go back to! Nestled on southern part of the Kohala mountain and made up of unique climates, Waimea is a special place known as paniolo (cowboy) country. I love this image because it truly captures the beauty and meaning of Waimea.
-![](images/gallery/waimea.jpg){group="my-group"}
+University of Washington \| Seattle, WA
 
-### puakō
-Growing up, I spent much time wading in the tide pools with my sister, while my dad dove for fish that we would later eat for dinner! I still love exploring the tide pools here, especially when the sea turtles are basking on the lava rocks.
-![](images/gallery/puako.jpg){group="my-group"}
+### PROJECTS
 
-### mauʻumae
-Being a quick 20 minute cruise down the hill, Mauʻumae is my favorite beach on the island of Hawaiʻi.
-![](images/gallery/mauumae.jpg){group="my-group"}
+**Disparate Data to Actionable Analysis: The Bio Weaver Tool** \| (2026)
 
-### nuiliʻi
-I spent a day visiting Nuiliʻi in Kohala, an area of land under the care of [The Kohala Center](https://storymaps.arcgis.com/stories/157efdffecaa4271bf124e5dee227629). I was able to tend to the ulu hala (lau hala groves) of Nuiliʻi to contribute to the greater effort of replenishing lau hala in Kohala.
-![](images/gallery/nuilii.jpg){group="my-group"}
+MEDS Capstone Project \| Client: Rincon Consultants, Inc.
 
-### ʻamakihi
-Me and a Hawaiʻi ʻAmakihi! One of my absolute favorite things to do is sitting in an ʻōhiʻa forest and listening to all the native Hawaiian forest bird sing. Since many of these beautiful little birds face many threats such as habitat loss and avian malaria, I feel incredibly lucky to have participated in several bird banding days to gain insights into the health of these populations.
 
-![](images/gallery/field_work.jpg){group="my-group"}
+### RESEARCH
 
-### burke
-During my junior year of undergrad, I spent sometime as a Plant Macrofossil Photographer for the Strömberg Paleobotany Lab at the Burke Museum of Natural History and Culture. The museum's glass-walled working labs allowed guests to see curators and scientist in action. While working under the watchful eyes of museum visitors, I was grateful to have the opportunity to show my community what research is like up close.
-![](images/gallery/burke.jpg){group="my-group"}
+**Summer Undergraduate Research Fellow** \| (2024)
 
-### seattle
-I spent many field trips frolicking in the forests, to escape from the hustle and bustle of the city.
+Hawaiʻi SeaGrant \| Pacific Island Ecosystem Research Center \| Hawaiʻi Volcano National Park, HI
 
-![](images/gallery/seattle.jpg){group="my-group"}
+**Plant Macrofossil Photographer** \| (2024)
 
-### santa barbara
-Where I am now! A place that feels like home, from the sunny weather and beaches to a community that **LOVES** the outdoors.
-![](images/gallery/sb_sunset.jpg){group="my-group"}
+Strömberg Paleobotany Lab \| University of Washington \| Seattle, WA
+
+
+--------------------------------------------------------------------------------
+
+**Data Analysis Intern** \| (2023 - 2024)
+
+Quantitative Ecology Lab \| University of Washington \| Seattle, WA
+
 
 :::
 
+------------------------------------------------------------------------
