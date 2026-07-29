@@ -18,7 +18,7 @@ resources:
 
 ### The Overarching Problem
 
-California’s diverse ecosystems are under increasing pressure from multiple environmental and human-inflicted challenges. Some of these challenges include urban development, habitat fragmentation, and accelerating climate change. Urban development is expanding into natural landscapes, Habitat fragmentation disrupts ecosystem connectivity, and accelerating climate change alters environmental conditions at an unprecedented rate. These pressures are affecting California's ecosystems and creating new challenges for biodiversity conservation and sustainable development.
+California’s diverse ecosystems are under increasing pressure from multiple environmental and human-inflicted challenges. Some of these challenges include urban development, habitat fragmentation, and accelerating climate change. Urban development is expanding into natural landscapes, habitat fragmentation disrupts ecosystem connectivity, and accelerating climate change alters environmental conditions at an unprecedented rate. These pressures affect California's ecosystems and create new challenges for biodiversity conservation and sustainable development.
 
 These environmental challenges directly impact California's wildlife species and sensitive habitats. Driving shifts in species distributions and increase the vulnerability of already at-risk plants and wildlife. This makes it critical to better understand how development and environmental change affect ecological systems.
 
@@ -48,16 +48,6 @@ Our approach was broken down into three main parts: 1) backend development, 2) f
 
 This approach allowed us to perfect the replication of a reproducible and standardized data processing workflow that could be easily applied to projects of different scales and needs. Once the workflow was completed, we were able to integrate the workflow into a more user-friendly experience using the application builder Streamlit. This framework allowed for specific gadgets and customization needs, requested by Rincon, such as uploading files, mapping large-scale projects, creating editable tables, and exporting tables to a formatted Microsoft Word report document.
 
-<!-- # The Bio Weaver Tool -->
-
-<!-- {{< video images/videos/1_boundary.mp4 >}} -->
-
-<!-- {{< video images/videos/2_mapchartsdata.mov >}} -->
-
-<!-- {{< video images/videos/3_ptoreport.mov >}} -->
-
-<!-- {{< video images/videos/4_wordexport.mov >}} -->
-
 # The Bio Weaver Tool
 
 <video class="scroll-video" src="images/videos/1_boundary.mp4" muted loop playsinline></video>
@@ -86,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 .scroll-video { width: 100%; display: block; margin-bottom: 2rem; }
 </style>
 
-*Note: For demonstration and security of classified information purposes, all data has been randomized and is not accurate.*
+*Note: To protect sensitive and restricted-access data, all values shown here have been randomized and do not reflect actual records.*
 
 # Next Steps
 
