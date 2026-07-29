@@ -215,13 +215,41 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/approach.jpeg" class="img-fluid"></p>
 <p>Our approach was broken down into three main parts: 1) backend development, 2) frontend development, 3) packaging.</p>
 <p>This approach allowed us to perfect the replication of a reproducible and standardized data processing workflow that could be easily applied to projects of different scales and needs. Once the workflow was completed, we were able to integrate the workflow into a more user-friendly experience using the application builder Streamlit. This framework allowed for specific gadgets and customization needs, requested by Rincon, such as uploading files, mapping large-scale projects, creating editable tables, and exporting tables to a formatted Microsoft Word report document.</p>
+<!-- # The Bio Weaver Tool -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
 </section>
 <section id="the-bio-weaver-tool" class="level1">
 <h1>The Bio Weaver Tool</h1>
-<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="images/videos/1_boundary.mp4"></video></div>
-<div class="quarto-video"><video id="video_shortcode_videojs_video2" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="images/videos/2_mapchartsdata.mov"></video></div>
-<div class="quarto-video"><video id="video_shortcode_videojs_video3" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="images/videos/3_ptoreport.mov"></video></div>
-<div class="quarto-video"><video id="video_shortcode_videojs_video4" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="images/videos/4_wordexport.mov"></video></div>
+<video class="scroll-video" src="images/videos/1_boundary.mp4" muted="" loop="" playsinline="">
+</video>
+<video class="scroll-video" src="images/videos/2_mapchartsdata.mp4" muted="" loop="" playsinline="">
+</video>
+<video class="scroll-video" src="images/videos/3_ptoreport.mp4" muted="" loop="" playsinline="">
+</video>
+<video class="scroll-video" src="images/videos/4_wordexport.mp4" muted="" loop="" playsinline="">
+</video>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const videos = document.querySelectorAll(".scroll-video");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.play();
+      } else {
+        entry.target.pause();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  videos.forEach(video => observer.observe(video));
+});
+</script>
+<style>
+.scroll-video { width: 100%; display: block; margin-bottom: 2rem; }
+</style>
 <p><em>Note: For demonstration and security of classified information purposes, all data has been randomized and is not accurate.</em></p>
 </section>
 <section id="next-steps" class="level1">
