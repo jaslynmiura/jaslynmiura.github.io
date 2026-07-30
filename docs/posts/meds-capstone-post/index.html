@@ -218,12 +218,24 @@ ul.task-list li input[type="checkbox"] {
 <h1>The Bio Weaver Tool</h1>
 <video class="scroll-video" src="images/videos/1_boundary.mp4" muted="" loop="" playsinline="">
 </video>
+<p>
+Users are able to upload a project boundary in the form of a .GEOJSON file. The boundary can then be viewed through an interactive map, allowing the user to pan and zoom in on the boundary location. Users can then apply their desired search radius criteria and a buffer will be applied to the boundary. The user can again view the project area through an updated interactive map, displaying the original project boundary and the search radius buffer
+</p>
 <video class="scroll-video" src="images/videos/2_mapchartsdata.mp4" muted="" loop="" playsinline="">
 </video>
+<p>
+After applying the buffer, users can jump to the results page. As the page loads, on the backend the tool searches for species records that occur within the project area, and populates their spatial locations onto the map shown on the results page. Users can pan around and zoom to see the proximity of different species to the project site. As users hover over each species on the map, the attributes for that species appear, such as scientific name and location details. This page also features a table of the count of each species that occurred within the search area. The species returned from each data source in the search is located within these raw data tables that can be exported as .csv files.
+</p><p>
 <video class="scroll-video" src="images/videos/3_ptoreport.mp4" muted="" loop="" playsinline="">
 </video>
+</p><p>
+The next page features an editable report builder, which consolidates all species records into one table and provides a total count of the returned species at the top. Users can add columns and sort the table by them as desired, such as by taxon category. Edits can be made through a drop down menu and inputing text into columns. Once all desired edits have been made, the report table can be saved and the counts of assigned species updates at the top. The file can also be renamed as desired and finally exported as a Word document.
+</p><p>
 <video class="scroll-video" src="images/videos/4_wordexport.mp4" muted="" loop="" playsinline="">
 </video>
+</p><p>
+The exported Word document contains the edits made in the dashboard. It is formatted in a precise way for direct use in final project reports.
+</p><p>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const videos = document.querySelectorAll(".scroll-video");
@@ -243,12 +255,13 @@ document.addEventListener("DOMContentLoaded", () => {
 <style>
 .scroll-video { width: 100%; display: block; margin-bottom: 2rem; }
 </style>
-<p><em>Note: To protect sensitive and restricted-access data, all values shown here have been randomized and do not reflect actual records.</em></p>
+</p><p><em>Note: To protect sensitive and restricted-access data, all values shown here have been randomized and do not reflect actual records.</em></p>
+<p>The Bio Weaver Tool serves as a single platforms to retrieve, search, review, map, edit, and export project information. It dramatically simplifies Rincon’s data processing workflow and making the tool reusable across various projects.</p>
 </section>
 <section id="next-steps" class="level1">
 <h1>Next Steps</h1>
-<p>This version of the Bio Weaver Tool provides Rincon with an initial fully functional tool that can be used every day in the workplace. However, this version is also foundational, and along with the application, Rincon also received much documentation/instructions to further build and expand the tool. One potential next step would be to incorporate additional biological data sources used in the tool. Another possibility is for them to extend map interactivity and details, such as the incorporation of various mapping features (elevation, soils, etc.). For the long term, Rincon could also integrate benchmark capabilities within the dashboard to allow for multi-project comparison over time.</p>
-<p>Overall, our project goes beyond just a simple dashboard tool. It is clear that there is a growing need for environmental consulting workflows to become more scalable, more consistent, and more accessible, especially as biological data and projects become more complex. The Bio Weaver is just one example we have set of how we can use integrated data tools to move workflows in that direction.</p>
+<p>This version of the Bio Weaver Tool provides Rincon with an initial fully functional tool that can be used every day in the workplace. However, this version is also foundational, and along with the application, Rincon received much documentation/instructions to further build and expand the tool. One potential next step would be to incorporate additional biological data sources used in the tool. Another possibility is for them to extend map interactivity and details, such as the incorporation of various mapping features (elevation, soils, etc.). For the long term, Rincon could also integrate benchmark capabilities within the dashboard to allow for multi-project comparison over time.</p>
+<p>Overall, this project goes beyond just a simple dashboard tool. It is clear that there is a growing need for environmental consulting workflows to become more scalable, more consistent, and more accessible, especially as biological data and projects become more complex. The Bio Weaver is just one example we have set of how we can use integrated data tools to move workflows in that direction.</p>
 </section>
 <section id="my-experience" class="level1">
 <h1>My Experience</h1>
