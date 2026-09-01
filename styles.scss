@@ -95,4 +95,8 @@ h1, h2 {
   margin-top: 2rem;
 }
 
+html {
+  scrollbar-color: $navyblue #f0f0f0; // thumb, track
+  scrollbar-width: auto;
+}
 
