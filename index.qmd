@@ -20,20 +20,23 @@ about:
       href: mailto:jaslyntmiura@ucsb.edu
 lightbox: true
 ---
+
 ::: {#about-block}
 <h1>ALOHA!</h1>
+
 I am a data scientist, inspired by my Hawaiʻi community, where the relationship between the land and people fuels my passion to protect the environment, using the intersection of technology and tradition.
 
 I'm interested in conservation, sustainable development, and learning more about traditional ecological knowledge within different communities. My hope is to eventually return back home to Hawaiʻi to give back to my home, but until then I want to explore different places far and wide to learn more about the environment!
 
-<br>
-**Explore my website to learn more about me and the things I do!**
-::: 
+<br> **Explore my website to learn more about me and the things I do!**
+
+
+:::
 
 ```{=html}
 <style>
 .about-entity::after {
-  content: "I ka w\0101  ma mua, ka w\0101  ma hope \A (The future is found in the past)";
+  content: "E m\000101lama i ka \0002BB\000101ina, a m\000101lama ka \0002BB\000101ina i\000101 \0002BBoe \A (Care for the land and the land will care for you)";
   display: block;
   text-align: center;
   font-style: italic;
@@ -45,18 +48,16 @@ I'm interested in conservation, sustainable development, and learning more about
 </style>
 ```
 
-
 ------------------------------------------------------------------------
 
 ::: panel-tabset
 ### EDUCATION
 
-
 **Master of Environmental Data Science** \| (2026)
 
 Bren School of Environmental Science & Management \| University of California, Santa Barbara \| Santa Barbara, CA
 
---------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 **Bachelor of Science, Environmental Science and Terrestrial Resource Management, minor in Quantitative Science** \| (2025)
 
@@ -68,37 +69,33 @@ University of Washington \| Seattle, WA
 
 Hawaiʻi Cooperative Studies Unit \| Research Corporation of the University of Hawaiʻi
 
---------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 **Disparate Data to Actionable Analysis: The Bio Weaver Tool** \| (2026)
 
 MEDS Capstone Project \| Client: Rincon Consultants, Inc.
 
-
 ### EXPERIENCE
 
-**Quantitative Spatial Research Analyst** \| (Present) 
+**Quantitative Spatial Research Analyst** \| (Present)
 
 Hawaiʻi Cooperative Studies Unit \| Research Corporation of the University of Hawaiʻi \| Hilo, HI
 
---------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 **Summer Undergraduate Research Fellow** \| (2024)
 
 Hawaiʻi SeaGrant \| Pacific Island Ecosystem Research Center \| Hawaiʻi Volcano National Park, HI
 
---------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 **Plant Macrofossil Photographer** \| (2024)
 
 Strömberg Paleobotany Lab \| University of Washington \| Seattle, WA
 
---------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 **Data Analysis Intern** \| (2023 - 2024)
 
 Quantitative Ecology Lab \| University of Washington \| Seattle, WA
-
 :::
-
-
