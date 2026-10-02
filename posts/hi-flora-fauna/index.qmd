@@ -1,0 +1,19 @@
+---
+title: "Hawaiʻi's Native Flora and Fauna"
+description: "My field notes"
+date: 2026-10-01
+categories: [ART]
+# image: 'filepath of the image in the first-blog-post file, put image in the first-blog-post/'
+# citation:
+#   url: https://jaslynmiura.github.io/posts/my-first-blog-post/
+draft: true
+draft-mode: linked # hides the post on the listing page, the url exists just hides it from main website.
+# bibliography: references.bib
+
+---
+
+## PLANTS
+
+## BIRDS
+
+## 
