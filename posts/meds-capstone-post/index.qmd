@@ -22,7 +22,7 @@ California’s diverse ecosystems are under increasing pressure from multiple en
 
 These environmental challenges directly impact California's wildlife species and sensitive habitats. Driving shifts in species distributions and increase the vulnerability of already at-risk plants and wildlife. This makes it critical to better understand how development and environmental change affect ecological systems.
 
-# About Rincon Consultants Inc. 
+# About Rincon Consultants Inc.
 
 As a California-based environmental consulting firm, Rincon helps public and private sector projects navigate the balance between development and stewardship. Specifically, through Rincon’s Biological Resources Team, biologists conduct evaluations to assess potential impacts on species and habitats. These evaluations involve identifying species presence, occurrence patterns, and habitat locations within a project area.
 
@@ -34,11 +34,11 @@ To conduct project evaluations, biologists access several different biological d
 
 To achieve this, we defined three deliverables:
 
-1. Establish a reproducible data processing workflow that helps automate data integration while improving data retrieval consistency across projects.
+1.  Establish a reproducible data processing workflow that helps automate data integration while improving data retrieval consistency across projects.
 
-2. Design an interactive, user-friendly application designed to simplify and standardize project data processing.
+2.  Design an interactive, user-friendly application designed to simplify and standardize project data processing.
 
-3. Maintain a detailed and packaged code repository that allows for future expansion and adaptation of the tool over time.
+3.  Maintain a detailed and packaged code repository that allows for future expansion and adaptation of the tool over time.
 
 # The Approach
 
@@ -50,22 +50,43 @@ This approach allowed us to perfect the replication of a reproducible and standa
 
 # The Bio Weaver Tool
 
-<video class="scroll-video" src="images/videos/1_boundary.mp4" muted loop playsinline></video>
+<video class="scroll-video" src="images/videos/1_boundary.mp4" muted loop playsinline>
+
+</video>
 
 <p>Users are able to upload a project boundary in the form of a .GEOJSON file. The boundary can then be viewed through an interactive map, allowing the user to pan and zoom in on the boundary location. Users can then apply their desired search radius criteria and a buffer will be applied to the boundary. The user can again view the project area through an updated interactive map, displaying the original project boundary and the search radius buffer</p>
 
-<video class="scroll-video" src="images/videos/2_mapchartsdata.mp4" muted loop playsinline></video>
+<video class="scroll-video" src="images/videos/2_mapchartsdata.mp4" muted loop playsinline>
 
-<p>After applying the buffer, users can jump to the results page. As the page loads, on the backend the tool searches for species records that occur within the project area, and populates their spatial locations onto the map shown on the results page. Users can pan around and zoom to see the proximity of different species to the project site. As users hover over each species on the map, the attributes for that species appear, such as scientific name and location details. This page also features a table of the count of each species that occurred within the search area. The species returned from each data source in the search is located within these raw data tables that can be exported as .csv files.<p>
+</video>
 
-<video class="scroll-video" src="images/videos/3_ptoreport.mp4" muted loop playsinline></video>
+<p>
 
-<p>The next page features an editable report builder, which consolidates all species records into one table and provides a total count of the returned species at the top. Users can add columns and sort the table by them as desired, such as by taxon category. Edits can be made through a drop down menu and inputing text into columns. Once all  desired edits have been made, the report table can be saved and the counts of assigned species updates at the top. The file can also be renamed as desired and finally exported as a Word document.<p>
+After applying the buffer, users can jump to the results page. While the page loads, on the backend the tool searches for species records that occur within the project area, and populates their spatial locations onto the map shown on the results page. Users can pan around and zoom to see the proximity of different species to the project site. As users hover over each species on the map, the attributes for that species appear, such as scientific name and location details. This page also features a table of the count of each species that occurred within the search area. The species returned from each data source in the search is located within these raw data tables that can be exported as .csv files.
 
-<video class="scroll-video" src="images/videos/4_wordexport.mp4" muted loop playsinline></video>
+<p>
 
-<p>The exported Word document contains the edits made in the dashboard. It is formatted in a precise way for direct use in final project reports.<p>
+<video class="scroll-video" src="images/videos/3_ptoreport.mp4" muted loop playsinline>
 
+</video>
+
+<p>
+
+The next page features an editable report builder, which consolidates all species records into one table and provides a total count of the returned species at the top. Users can add columns and sort the table by them as desired, such as by taxon category. Edits can be made through a drop down menu and by inputting text into columns. Once all desired edits have been made, the report table can be saved and the counts of assigned species updates at the top. The file can also be renamed as desired and finally exported as a Word document.
+
+<p>
+
+<video class="scroll-video" src="images/videos/4_wordexport.mp4" muted loop playsinline>
+
+</video>
+
+<p>
+
+The exported Word document contains the edits made in the dashboard. It is formatted in a precise way for direct use in Rincon's official final project reports.
+
+<p>
+
+```{=html}
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const videos = document.querySelectorAll(".scroll-video");
@@ -82,30 +103,30 @@ document.addEventListener("DOMContentLoaded", () => {
   videos.forEach(video => observer.observe(video));
 });
 </script>
+```
 
+```{=html}
 <style>
 .scroll-video { width: 100%; display: block; margin-bottom: 2rem; }
 </style>
+```
 
 *Note: To protect sensitive and restricted-access data, all values shown here have been randomized and do not reflect actual records.*
 
-The Bio Weaver Tool serves as a single platforms to retrieve, search, review, map, edit, and export project information. It dramatically simplifies Rincon's data processing workflow and making the tool reusable across various projects.
+The Bio Weaver Tool serves as a single platform to retrieve, search, review, map, edit, and export project information. It dramatically simplifies Rincon's data processing workflow and makes the tool reusable across various projects.
 
 # Next Steps
 
-This version of the Bio Weaver Tool provides Rincon with an initial fully functional tool that can be used every day in the workplace. However, this version is also foundational, and along with the application, Rincon received much documentation/instructions to further build and expand the tool. One potential next step would be to incorporate additional biological data sources used in the tool. Another possibility is for them to extend map interactivity and details, such as the incorporation of various mapping features (elevation, soils, etc.). For the long term, Rincon could also integrate benchmark capabilities within the dashboard to allow for multi-project comparison over time.
+This version of the Bio Weaver Tool provides Rincon with an initial fully functional tool that can be used every day in the workplace. While this version of the application is considered foundational, Rincon also obtained much documentation/instructions to allow for further development and expansion the tool. One potential next step would be to integrate additional biological data sources to create more comprehensive reports. Another possibility is for Rincon to extend map interactivity and details, such as the incorporation of various mapping layers (elevation, soils, etc.). Finally, once Rincon handles the deployment strategy of the Bio Weaver Tool, adjustments could be made to this version to enable benchmark capabilities within the dashboard to allow for multi-project comparison over time.
 
-Overall, this project goes beyond just a simple dashboard tool. It is clear that there is a growing need for environmental consulting workflows to become more scalable, more consistent, and more accessible, especially as biological data and projects become more complex. The Bio Weaver is just one example we have set of how we can use integrated data tools to move workflows in that direction. 
+Overall, this project goes beyond just a simple dashboard tool. It is clear that there is a growing need for environmental consulting workflows to become more scalable, consistent, and accessible, especially as biological data and projects become more complex. The Bio Weaver is just one example we have set of how we can use integrated data tools to move workflows in that direction.
 
 # My Experience
 
-This project was incredibly unique, where my team had the opportunity to work with a real-world client to create a tool that would be used in a workplace every day. I learned so much about the technicalities behind software/application development. This was a great experience to gain, as this project exposed me to different methods, concepts, processes, frameworks, and vocabulary that I had not ever heard of six months ago. While we faced many challenges throughout our project, I'm grateful to have worked with amazing team members, advisors, and clients who were attentive, flexible, and committed to the project throughout its entirety. This project gave me the hands-on experience to create a data tool used for real-world decision-making, and has inspired me to continue using technology and data to support these decisions.
+This project was incredibly unique, where my team had the opportunity to work with a real-world client to create a tool that would be used in a workplace every day. I learned so much about the technicalities behind software/application development. This was a great experience to gain, as this project exposed me to different methods, concepts, processes, frameworks, and vocabulary that I had not ever heard of before starting the project. While we faced many challenges throughout our project, I'm grateful to have worked with amazing team members, advisors, and clients who were attentive, flexible, and committed to the project throughout its entirety. This project gave me the hands-on experience to create a data tool used for real-world decision-making. Moving forward I am inspired to continue using technology and data to support environmental decision-making and solutions.
+
+![](images/bioweavers.jpg)
 
 # Acknowledgements
 
 We extend our gratitude to our team at Rincon Consults Inc., Lisa Achter, Carly Caswell, Robin Murray, Allie Sennett, Tyler Friesen, Dr. Kelly Caylor, Dr. Carmen Galaz García, the MEDS Capstone Committee, and our MEDS cohort for their support, feedback, and love throughout the year.
-
-
-
-
-

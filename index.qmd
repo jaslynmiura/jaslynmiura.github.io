@@ -17,26 +17,25 @@ about:
       target: _blank
     - text: Email
       icon: inbox
-      href: mailto:jaslyntmiura@ucsb.edu
+      href: mailto:jaslyntatsuko@gmail.com
 lightbox: true
 ---
 
 ::: {#about-block}
-<h1>ALOHA!</h1>
+<h1 style="font-size: 3rem;">ALOHA! </h1>
 
-I am a data scientist, inspired by my Hawaiʻi community, where the relationship between the land and people fuels my passion to protect the environment, using the intersection of technology and tradition.
+<br>
 
-I'm interested in conservation, sustainable development, and learning more about traditional ecological knowledge within different communities. My hope is to eventually return back home to Hawaiʻi to give back to my home, but until then I want to explore different places far and wide to learn more about the environment!
+I am a data scientist, inspired by my Hawaiʻi community, where the relationship between the land and people fuels my passion to protect the environment I grew up with. Through my work I aim to use the intersection of technology and tradition to create data-driven solutions to the environmental challenges we face.
 
 <br> **Explore my website to learn more about me and the things I do!**
-
 
 :::
 
 ```{=html}
 <style>
 .about-entity::after {
-  content: "E m\000101lama i ka \0002BB\000101ina, a m\000101lama ka \0002BB\000101ina i\000101 \0002BBoe \A (Care for the land and the land will care for you)";
+  content: "E m\000101lama i ka \0002BB\000101ina, a m\000101lama ka \0002BB\000101ina i\000101  \0002BBoe \A (Care for the land and the land will care for you)";
   display: block;
   text-align: center;
   font-style: italic;
@@ -44,6 +43,23 @@ I'm interested in conservation, sustainable development, and learning more about
   font-size: 0.9em;
   color: gray;
   white-space: pre;
+}
+</style>
+<style>
+#about-block {
+  align-items: center;   /* vertically centers text against the image column */
+}
+
+#about-block .about-contents {
+  text-align: center;
+}
+
+#about-block h1 {
+  font-size: 3rem;       /* adjust to taste */
+}
+
+.about-entity::after {
+  /* ...your existing rules... */
 }
 </style>
 ```

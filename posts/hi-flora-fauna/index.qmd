@@ -9,7 +9,6 @@ categories: [ART]
 draft: true
 draft-mode: linked # hides the post on the listing page, the url exists just hides it from main website.
 # bibliography: references.bib
-
 ---
 
 ## PLANTS
